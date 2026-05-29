@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zhe Ren — Academic Review Portfolio 2025–2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--blue:#2233FF;--blue-dark:#1122CC;--ink:#0A0A0A;--white:#FFFFFF;--offwhite:#F5F5F5;--mid:#999;--border:#E0E0E0;--card-r:16px}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--ink);font-size:15px;line-height:1.6;overflow-x:hidden}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes modalIn{from{opacity:0;transform:scale(0.94) translateY(16px)}to{opacity:1;transform:scale(1) translateY(0)}}
+@keyframes overlayIn{from{opacity:0}to{opacity:1}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--white);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:60px;border-bottom:2px solid var(--ink)}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.06em;color:var(--ink)}
+.nav-logo span{color:var(--blue)}
+.nav-links{display:flex;height:100%}
+.nav-link{display:flex;align-items:center;padding:0 1.25rem;font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);cursor:pointer;border-left:1px solid var(--border);transition:color 0.2s;position:relative}
+.nav-link::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--blue);transform:scaleX(0);transition:transform 0.22s ease}
+.nav-link:hover{color:var(--ink)}
+.nav-link:hover::after,.nav-link.active::after{transform:scaleX(1)}
+.nav-link.active{color:var(--blue);font-weight:700}
+
+/* HERO */
+.hero{background:var(--white);padding:2.5rem 2.5rem 0;border-bottom:3px solid var(--ink);overflow:hidden}
+.hero-top{display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.hero-left{flex:1;min-width:200px}
+.hero-kicker{display:inline-block;border:2px solid var(--ink);font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:4px 14px;border-radius:100px;margin-bottom:0.75rem}
+.hero-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,7vw,6rem);line-height:1;color:#0A0A0A;letter-spacing:0.04em;white-space:nowrap}
+.hero-name .blue{color:#0A0A0A}
+.hero-right{max-width:280px;padding-top:0.5rem}
+.hero-title{font-size:0.85rem;color:var(--mid);line-height:1.6;border-left:3px solid var(--blue);padding-left:12px}
+.stats-row{display:flex;flex-wrap:wrap;border-top:2px solid var(--ink)}
+.stat{flex:1;min-width:100px;padding:1rem 1.25rem;border-right:2px solid var(--ink);cursor:default}
+.stat:last-child{border-right:none}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--blue);line-height:1}
+.stat-lbl{font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-top:4px}
+
+/* TICKER */
+
+
+
+.ticker-dot{width:8px;height:8px;border-radius:50%;background:var(--white);flex-shrink:0}
+
+/* SECTION NAV */
+.section-nav{display:flex;position:sticky;top:60px;z-index:90;background:var(--ink)}
+.section-tab{flex:1;padding:1rem 0.5rem;text-align:center;font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;border-right:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.45);transition:color 0.2s;position:relative}
+.section-tab:last-child{border-right:none}
+.section-tab::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--blue);transform:scaleX(0);transition:transform 0.22s ease}
+.section-tab:hover{color:rgba(255,255,255,0.8)}
+.section-tab.active{color:#fff}
+.section-tab.active::after{transform:scaleX(1)}
+.portfolio-section{display:none}
+.portfolio-section.visible{display:block}
+
+/* LAYOUT */
+.section-header{padding:3rem 2.5rem 2rem;border-bottom:2px solid var(--ink);display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;letter-spacing:0.04em;color:var(--ink)}
+.section-count{font-size:0.68rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);padding-bottom:0.5rem}
+.subsection{padding:2rem 2.5rem;border-bottom:1px solid var(--border)}
+.subsection:last-child{border-bottom:none}
+.subsection-label{font-size:0.65rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
+.subsection-label::before{content:'';width:24px;height:3px;background:var(--blue);border-radius:2px;flex-shrink:0}
+.subsection-label::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* CARDS */
+.cards-wrap{border:2px solid var(--ink);border-radius:var(--card-r);overflow:hidden;background:var(--white)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));background:var(--white)}
+.card{background:var(--white);padding:1.5rem;display:flex;flex-direction:column;animation:fadeUp 0.5s ease both;transition:background 0.18s;border-right:1px solid var(--border);border-bottom:1px solid var(--border);min-width:0}
+.card:hover{background:var(--offwhite)}
+.card:last-child{border-right:none;border-bottom:none}
+.cards:has(.card:nth-child(2)):not(:has(.card:nth-child(3))) .card{border-bottom:none}
+.cards:has(.card:nth-child(2)):not(:has(.card:nth-child(3))) .card:nth-child(2){border-right:none}
+.cards:has(.card:nth-child(4)):not(:has(.card:nth-child(5))) .card:nth-child(n+3){border-bottom:none}
+.card-eyebrow{font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue);margin-bottom:0.6rem}
+.card-title{font-family:'DM Serif Display',serif;font-size:1.15rem;font-weight:400;line-height:1.3;color:var(--ink);margin-bottom:0.6rem}
+.card-desc{font-size:0.8rem;color:var(--mid);line-height:1.6;margin-bottom:0.75rem;flex:1}
+.card-desc-short{font-size:0.8rem;color:var(--mid);line-height:1.6;margin-bottom:0.4rem}
+.card-desc-extra{font-size:0.8rem;color:var(--mid);line-height:1.6;display:none;margin-bottom:0.4rem}
+.card-desc-extra.open{display:block}
+.read-more-btn{font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);background:none;border:none;cursor:pointer;padding:0;margin-bottom:0.75rem;display:inline-flex;align-items:center;gap:3px;transition:opacity 0.18s}
+.read-more-btn:hover{opacity:0.7}
+.card-meta{font-size:0.75rem;color:var(--mid);line-height:1.5;margin-bottom:0.75rem;padding:0.6rem 0.75rem;background:var(--offwhite);border-radius:6px;border-left:3px solid var(--blue)}
+.card-meta strong{color:var(--ink);font-weight:600}
+.card-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:0.75rem;border-top:1px solid var(--border)}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.tag{font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);cursor:default;user-select:none}
+.tag::before{content:'#';margin-right:1px;opacity:0.5}
+.tag.blue{color:var(--blue)}
+
+/* BUTTONS */
+.view-btn{cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:7px 18px;border-radius:100px;background:var(--blue);color:var(--white);border:2px solid var(--blue);cursor:pointer;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:background 0.2s,border-color 0.2s,transform 0.2s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.2s}
+.view-btn:hover{background:var(--blue-dark);border-color:var(--blue-dark);transform:translateY(-3px) scale(1.06);box-shadow:0 8px 20px rgba(34,51,255,0.4)}
+.view-btn:active{transform:scale(0.97);box-shadow:none}
+.view-btn-sm{padding:5px 12px;font-size:0.6rem}
+.multi-links{display:flex;gap:6px;flex-wrap:wrap}
+
+/* AWARD CARD */
+.award-card{background:var(--ink) !important;border-color:rgba(255,255,255,0.08) !important}
+.award-card:hover{background:#111 !important}
+.award-card .card-eyebrow{color:#7B8FFF}
+.award-card .card-title{color:var(--white)}
+.award-card .card-desc,.award-card .card-desc-short,.award-card .card-desc-extra{color:rgba(255,255,255,0.45)}
+.award-card .card-footer{border-top-color:rgba(255,255,255,0.1)}
+.award-card .tag{color:rgba(255,255,255,0.4)}
+.award-card .tag.blue{color:#9EB0FF}
+.award-card .read-more-btn{color:#7B8FFF}
+.award-card .view-btn{background:var(--white);border-color:var(--white);color:var(--ink)}
+.award-card .view-btn:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+
+/* COURSE BLOCKS */
+.course-block{border:2px solid var(--ink);border-radius:var(--card-r);overflow:hidden;margin-bottom:1rem;background:var(--white)}
+.course-block:last-child{margin-bottom:0}
+.course-header{padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;cursor:pointer;transition:background 0.18s;user-select:none}
+.course-header:hover{background:var(--offwhite)}
+.course-header-left{flex:1}
+.course-code{font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue);margin-bottom:0.3rem}
+.course-name{font-family:'DM Serif Display',serif;font-size:1.1rem;font-weight:400;color:var(--ink)}
+.course-toggle{font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);white-space:nowrap;background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:4px}
+.course-files{display:none;border-top:1px solid var(--border)}
+.course-files.open{display:block}
+.course-block:target,.course-block.just-opened{background:#F0F4FF;transition:background 0.4s ease;}
+
+/* FILE LIST */
+.file-list{padding:0}
+.file-item{display:flex;align-items:center;justify-content:space-between;padding:0.85rem 1.5rem;border-bottom:1px solid var(--border);gap:1rem;transition:background 0.15s}
+.file-item{transition:all 0.15s ease;border-radius:4px;padding:4px;margin:-4px;cursor:pointer;}
+.file-item:hover{background:#2233FF !important;}
+.file-item:hover .file-name{color:#fff !important;}
+.file-item:hover .file-type{color:rgba(255,255,255,0.7) !important;}
+.file-item:hover .file-icon{filter:brightness(10);}
+.file-item:hover .view-btn{background:#fff;color:#2233FF;border-color:#fff;}
+
+.file-item:last-child{border-bottom:none}
+.file-item:hover{background:var(--offwhite)}
+.file-info{display:flex;align-items:center;gap:0.75rem;flex:1;min-width:0}
+.file-icon{font-size:1rem;flex-shrink:0}
+.file-name{font-size:0.82rem;font-weight:500;color:var(--ink)}
+.file-type{font-size:0.6rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);flex-shrink:0}
+
+/* STUDENT WORK GRID */
+.student-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:1.25rem 1.5rem}
+@media(max-width:600px){.student-grid{grid-template-columns:repeat(2,1fr)}}
+.student-cell{display:flex;flex-direction:column;align-items:center;gap:6px}
+.student-num{font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+.student-cell .view-btn{width:100%;justify-content:center}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;padding:1.5rem;animation:overlayIn 0.2s ease both}
+.modal-overlay.open{display:flex}
+.modal-box{background:var(--white);border-radius:var(--card-r);width:100%;max-width:900px;max-height:92vh;display:flex;flex-direction:column;animation:modalIn 0.28s cubic-bezier(0.22,1,0.36,1) both;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.6)}
+.modal-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:var(--ink);flex-shrink:0;gap:1rem}
+.modal-header-left{flex:1;min-width:0}
+.modal-title{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.06em;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.modal-sub{font-size:0.7rem;color:rgba(255,255,255,0.45);margin-top:2px}
+.modal-close{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.1);border:none;color:var(--white);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.18s,transform 0.18s;flex-shrink:0}
+.modal-close:hover{background:var(--blue);transform:rotate(90deg) scale(1.1)}
+.modal-body{flex:1;overflow:hidden;min-height:500px;position:relative;background:var(--white);display:flex;align-items:center;justify-content:center}
+.modal-body iframe{width:100%;height:100%;min-height:500px;border:none;display:block;position:absolute;inset:0}
+.modal-spinner{position:absolute;z-index:2;width:40px;height:40px;border:3px solid rgba(34,51,255,0.15);border-top-color:var(--blue);border-radius:50%;animation:spin 0.8s linear infinite}
+.modal-footer{padding:0.85rem 1.5rem;border-top:2px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;gap:1rem;flex-wrap:wrap;background:var(--white)}
+.modal-note{font-size:0.68rem;color:var(--mid)}
+.modal-gdrive-btn{display:inline-flex;align-items:center;gap:5px;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:6px 14px;border-radius:100px;background:var(--blue);color:#fff;text-decoration:none;border:2px solid var(--blue);transition:background 0.2s,transform 0.2s}
+.modal-gdrive-btn:hover{background:var(--blue-dark);transform:translateY(-1px)}
+.card:nth-child(1){animation-delay:0.04s}.card:nth-child(2){animation-delay:0.1s}.card:nth-child(3){animation-delay:0.16s}.card:nth-child(4){animation-delay:0.22s}
+<style>
+.ps-section-head{font-family:"Bebas Neue",sans-serif;font-size:3.8rem;letter-spacing:0.06em;color:var(--white);background:var(--ink);margin:3rem -2.5rem 1.5rem;padding:0.6rem 2.5rem;text-transform:uppercase;display:block;}
+.ps-sub-head{font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue);margin:1.75rem 0 0.6rem;display:flex;align-items:center;gap:0.75rem;}
+.ps-sub-head::before{content:"";width:16px;height:2px;background:var(--blue);flex-shrink:0;}
+.ps-list{padding-left:1.25rem;margin-bottom:1rem;display:flex;flex-direction:column;gap:0.5rem;}
+.ps-list li{font-size:0.88rem;color:var(--mid);line-height:1.7;}
+.ps-quotes li{font-style:italic;color:var(--mid);}
+.ps-link{color:var(--blue);font-weight:600;font-size:0.8rem;letter-spacing:0.04em;text-decoration:none;border-bottom:1px solid currentColor;transition:opacity 0.2s;}
+.ps-link:hover{opacity:0.7;}
+</style>
+</style>
+</head>
+<body>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" onclick="handleOverlayClick(event)">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-header-left">
+        <div class="modal-title" id="modal-title"></div>
+        <div class="modal-sub" id="modal-sub"></div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-spinner" id="modal-spinner"></div>
+      <iframe id="modal-iframe" src="" allowfullscreen onload="document.getElementById('modal-spinner').style.display='none'"></iframe>
+    </div>
+    <div class="modal-footer">
+      <span class="modal-note">💡 If preview doesn't load, open directly in Google Drive</span>
+      <a class="modal-gdrive-btn" id="modal-extlink" href="#" target="_blank">Open in Drive ↗</a>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-logo">ZHE REN<span>.</span></div>
+  <div class="nav-links">
+    <a class="nav-link active" id="navlink-statement" onclick="switchSection('statement')">Statement</a>
+    <a class="nav-link" id="navlink-teaching" onclick="switchSection('teaching')">Teaching</a>
+    <a class="nav-link" id="navlink-scholarly" onclick="switchSection('scholarly')">Scholarly Activity</a>
+    <a class="nav-link" id="navlink-service" onclick="switchSection('service')">Service</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-top">
+    <div class="hero-left">
+      <div class="hero-kicker">Academic Review Portfolio · 2025–2026</div>
+      <div class="hero-name">ZHE <span class="blue">REN</span></div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-title">Assistant Professor, Digital Media · Department of Communications · California State University, Bakersfield</div>
+    </div>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><div class="stat-num">7</div><div class="stat-lbl">Courses Taught</div></div>
+    <div class="stat"><div class="stat-num">3</div><div class="stat-lbl">Awards & Grants</div></div>
+    <div class="stat"><div class="stat-num">7+</div><div class="stat-lbl">Exhibitions</div></div>
+    <div class="stat"><div class="stat-num">4</div><div class="stat-lbl">International Venues</div></div>
+  </div>
+</div>
+
+
+
+<div class="section-nav">
+  <div class="section-tab active" id="tab-statement" onclick="switchSection('statement')">📄 Personal Statement</div>
+  <div class="section-tab" id="tab-teaching" onclick="switchSection('teaching')">📚 Teaching</div>
+  <div class="section-tab" id="tab-scholarly" onclick="switchSection('scholarly')">🎨 Scholarly Activity</div>
+  <div class="section-tab" id="tab-service" onclick="switchSection('service')">🤝 Service</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ TEACHING -->
+<style>
+.eff-leg-item{display:flex;align-items:center;gap:6px;font-size:0.68rem;color:var(--mid);}
+.eff-leg-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.eff-leg-val{margin-left:auto;font-weight:600;color:var(--ink);}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+
+<script>
+(function(){
+  window._pendingCharts = window._pendingCharts || [];
+  window._chartInited = window._chartInited || new Set();
+  function tryInit(canvas, fn){
+    if(window._chartInited.has(canvas.id)) return;
+    if(!window.Chart){ setTimeout(function(){tryInit(canvas,fn);},150); return; }
+    window._chartInited.add(canvas.id);
+    fn();
+  }
+  window._lazyChart = function(canvasId, fn){
+    window._pendingCharts.push({id:canvasId, fn:fn});
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          tryInit(e.target, fn);
+          obs.unobserve(e.target);
+        }
+      });
+    },{threshold:0.1});
+    // Try to observe immediately, or wait for DOM
+    var el = document.getElementById(canvasId);
+    if(el){ obs.observe(el); }
+    else {
+      var tries=0;
+      var poll=setInterval(function(){
+        var el2=document.getElementById(canvasId);
+        if(el2){clearInterval(poll);obs.observe(el2);}
+        if(++tries>50)clearInterval(poll);
+      },100);
+    }
+  };
+})();
+</script>
+
+<div class="portfolio-section" id="section-teaching">
+  <div class="section-header">
+    <div><div class="section-title">Teaching</div></div>
+    <div class="section-count">7 courses · Fall 2025 &amp; Spring 2026</div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-label">Courses Taught</div>
+
+    <!-- COMM 2038 -->
+    <div class="course-block">
+      <div class="course-header" onclick="toggleCourse('c2038')">
+        <div class="course-header-left">
+          <div class="course-code">COMM 2038 · Fall 2025 &amp; Spring 2026</div>
+          <div class="course-name">Visual Language</div>
+        </div>
+        <button class="course-toggle" id="toggle-c2038">Show Files ↓</button>
+      </div>
+      <div class="course-files" id="c2038">
+        <div class="file-list">
+          <div class="file-item"><div class="file-info"><span class="file-icon">📄</span><span class="file-name">Syllabus — COMM 2038</span><span class="file-type">PDF</span></div><button class="view-btn view-btn-sm" onclick="openModal('1dcuwPZ3GVYqganq9et9CvnRODxAPZ6XF','Syllabus — COMM 2038','Visual Language · Fall 2025')">View ↗</button></div>
+                    <div class="file-item"><div class="file-info"><span class="file-icon">📊</span><span class="file-name">Power of Visual — Lecture</span><span class="file-type">PDF</span></div><button class="view-btn view-btn-sm" onclick="openModal('1PAw5e-dMqQBcBDEvGaVCgt2_ONrP4cED','Power of Visual — Lecture','COMM 2038')">View ↗</button></div>
+          <div class="file-item"><div class="file-info"><span class="file-icon">📝</span><span class="file-name">Creative Project</span><span class="file-type">PDF</span></div><button class="view-btn view-btn-sm" onclick="openModal('1iSTEjXAEdx644ust9qhgJsU-dGyaA5FP','Creative Project — COMM 2038','Visual Language')">View ↗</button></div>
+        </div>
+        <div class="course-block" style="margin-top:0;border-top:1px solid var(--border);border-radius:0;border-left:none;border-right:none;border-bottom:none">
+          <div class="course-header" onclick="toggleCourse('eff_c2038_fall')">
+            <div class="course-header-left">
+              <div class="course-code">Teaching Effectiveness · Fall 2025</div>
+              <div class="course-name">Student Evaluation Results</div>
+            </div>
+            <button class="course-toggle" id="toggle-eff_c2038_fall">Show Results ↓</button>
+          </div>
+          <div class="course-files" id="eff_c2038_fall">
+            <div style="padding:1.25rem 1.5rem;">
+              <div style="display:flex;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem;">
+                <div>
+                  <div style="font-size:0.75rem;font-weight:600;color:var(--ink);margin-bottom:2px;">COMM 2038-01</div>
+                  <div style="font-size:0.7rem;color:var(--mid);">Visual Language</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem;">
+                <div style="position:relative;width:120px;height:120px;flex-shrink:0;">
+                  <canvas id="eff_eff_c2038_fall" width="120" height="120"></canvas>
+</div>
+<div style="text-align:center;margin-top:6px;font-size:0.9rem;font-weight:700;color:var(--ink);">4.77<span style="font-size:0.65rem;font-weight:400;color:var(--mid);"> / 5.00</span></div>
+                <div style="display:flex;flex-direction:column;gap:5px;flex:1;">
+                  <div class="eff-leg-item"><span class="eff-leg-dot" style="background:#378ADD"></span>Enthusiasm<span class="eff-leg-val">4.9</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#7F77DD"></span>Explanations<span class="eff-leg-val">4.8</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#5DCAA5"></span>Preparedness<span class="eff-leg-val">4.9</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#EF9F27"></span>Engagement<span class="eff-leg-val">4.9</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#D85A30"></span>Office hours<span class="eff-leg-val">4.4</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#888780"></span>Feedback<span class="eff-leg-val">4.7</span></div>
+                </div>
+              </div>
+              <div style="padding:0.75rem 1rem;background:var(--offwhite);border-left:3px solid #378ADD;margin-bottom:0.75rem;">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#0C447C;margin-bottom:4px;">Student Highlight</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;font-style:italic;">"The instructor was super passionate. He never hesitated to help a student when they were lost."</p>
+              </div>
+              <div style="padding:0.75rem 1rem;background:#F0F4FF;border-left:3px solid var(--blue);">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:4px;">Summary</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;">Tied at the top (4.77/5) with near-perfect scores on enthusiasm (4.9) and preparedness (4.9). Students consistently praised the instructor's passion and hands-on engagement during class time.</p>
+              </div>
+              <div style="padding:0.75rem 1rem;background:#F0F4FF;border-left:3px solid var(--blue);margin-top:0.75rem;">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:4px;">Instructor Reflection</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;font-style:italic;">"Students in the SOCI section of COMM 2038 consistently noted that the course was well-organized and easy to navigate, with fast grading and clear instructions that made the online format feel structured and accessible."</p>
+              </div>
+              <div style="padding:0.75rem 1rem;background:#FFF8F0;border-left:3px solid #E8A030;margin-top:0.75rem;">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#B06010;margin-bottom:4px;">Areas for Continued Growth</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;">Office hours utilization was the one dimension rated slightly lower (4.4), suggesting an opportunity to promote these resources more actively — an ongoing priority as I work to ensure all students feel comfortable seeking support outside of class.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+window._lazyChart('eff_eff_c2038_fall', function(){
+  var canvas=document.getElementById('eff_eff_c2038_fall');
+  if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  new Chart(ctx, {
+            type:'pie',data:{datasets:[{
+              data:[4.77,0.23000000000000043],
+              backgroundColor:['#378ADD','rgba(128,128,128,0.12)'],
+              borderColor:['#185FA5','transparent'],
+              borderWidth:[2,0],hoverOffset:0
+            }]},options:{responsive:false,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{enabled:false}},animation:{duration:900,easing:'easeInOutQuart'}
+            }
+          });
+});
+</script>
+        <div class="course-block" style="margin-top:0;border-top:1px solid var(--border);border-radius:0;border-left:none;border-right:none;border-bottom:none">
+          <div class="course-header" onclick="toggleCourse('eff_c2038_spring')">
+            <div class="course-header-left">
+              <div class="course-code">Teaching Effectiveness · Spring 2026</div>
+              <div class="course-name">Student Evaluation Results</div>
+            </div>
+            <button class="course-toggle" id="toggle-eff_c2038_spring">Show Results ↓</button>
+          </div>
+          <div class="course-files" id="eff_c2038_spring">
+            <div style="padding:1.25rem 1.5rem;">
+              <div style="display:flex;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem;">
+                <div>
+                  <div style="font-size:0.75rem;font-weight:600;color:var(--ink);margin-bottom:2px;">COMM 2038-60</div>
+                  <div style="font-size:0.7rem;color:var(--mid);">Visual Language (online)</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem;">
+                <div style="position:relative;width:120px;height:120px;flex-shrink:0;">
+                  <canvas id="eff_eff_c2038_spring" width="120" height="120"></canvas>
+</div>
+<div style="text-align:center;margin-top:6px;font-size:0.9rem;font-weight:700;color:var(--ink);">4.50<span style="font-size:0.65rem;font-weight:400;color:var(--mid);"> / 5.00</span></div>
+                <div style="display:flex;flex-direction:column;gap:5px;flex:1;">
+                  <div class="eff-leg-item"><span class="eff-leg-dot" style="background:#378ADD"></span>Enthusiasm<span class="eff-leg-val">4.4</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#7F77DD"></span>Explanations<span class="eff-leg-val">4.6</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#5DCAA5"></span>Preparedness<span class="eff-leg-val">4.5</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#EF9F27"></span>Engagement<span class="eff-leg-val">4.4</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#D85A30"></span>Office hours<span class="eff-leg-val">4.6</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#888780"></span>Feedback<span class="eff-leg-val">4.5</span></div>
+                </div>
+              </div>
+              <div style="padding:0.75rem 1rem;background:var(--offwhite);border-left:3px solid #5DCAA5;margin-bottom:0.75rem;">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#0F6E56;margin-bottom:4px;">Student Highlight</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;font-style:italic;">"The instructor was quick with grading and provided helpful feedback! His lessons were simple but provided so much information that it made learning super easy."</p>
+              </div>
+              <div style="padding:0.75rem 1rem;background:#F0F4FF;border-left:3px solid var(--blue);">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:4px;">Summary</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;">Earned a solid 4.50, with students consistently praising the clear assignment instructions, fast grading, and helpful feedback. The course was well-organized from start to finish, making it easy for students to stay on track throughout the semester.</p>
+              </div>
+              <div style="padding:0.75rem 1rem;background:#F0F4FF;border-left:3px solid var(--blue);margin-top:0.75rem;">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:4px;">Instructor Reflection</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;font-style:italic;">"Students in the SOCI section of COMM 2038 consistently noted that the course was well-organized and easy to navigate, with fast grading and clear instructions that made the online format feel structured and accessible."</p>
+              </div>
+              <div style="padding:0.75rem 1rem;background:#FFF8F0;border-left:3px solid #E8A030;margin-top:0.75rem;">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#B06010;margin-bottom:4px;">Areas for Continued Growth</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;">As with most online sections, a handful of students noted the virtual format made personal connection feel less immediate; I continue to refine the course design — particularly the clarity of instructions and the pacing of feedback — to compensate for the inherent distance of asynchronous delivery.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+window._lazyChart('eff_eff_c2038_spring', function(){
+  var canvas=document.getElementById('eff_eff_c2038_spring');
+  if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  new Chart(ctx, {
+            type:'pie',data:{datasets:[{
+              data:[4.5,0.5],
+              backgroundColor:['#5DCAA5','rgba(128,128,128,0.12)'],
+              borderColor:['#1D9E75','transparent'],
+              borderWidth:[2,0],hoverOffset:0
+            }]},options:{responsive:false,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{enabled:false}},animation:{duration:900,easing:'easeInOutQuart'}
+            }
+          });
+});
+</script>
+        <div class="course-block" style="margin-top:0;border-top:1px solid var(--border);border-radius:0;border-left:none;border-right:none;border-bottom:none">
+          <div class="course-header" onclick="toggleCourse('sw2038')">
+            <div class="course-header-left">
+              <div class="course-code">Student Project Examples</div>
+              <div class="course-name">Student Work Gallery</div>
+            </div>
+            <button class="course-toggle" id="toggle-sw2038">Show Work ↓</button>
+          </div>
+          <div class="course-files" id="sw2038">
+            <div class="student-grid">
+              <div class="student-cell"><div class="student-num">Project 1</div><button class="view-btn view-btn-sm" onclick="openModal('1VssZZtQBTVCUaSdh8IegLlL3tKhlhB5t','COMM 2038 — Student Project 1','Visual Language')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 2</div><button class="view-btn view-btn-sm" onclick="openModal('1EIvOwqkSfQzhHQPdoaVBBKZeyl9wA3ag','COMM 2038 — Student Project 2','Visual Language')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 3</div><button class="view-btn view-btn-sm" onclick="openModal('1jW_gysUOkspXcQbrGxdK2LRwrbJyo9RD','COMM 2038 — Student Project 3','Visual Language')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 4</div><button class="view-btn view-btn-sm" onclick="openModal('1oau2ad36QVxJVWCCyYwuILFPbgZ6P2hv','COMM 2038 — Student Project 4','Visual Language')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 5</div><button class="view-btn view-btn-sm" onclick="openModal('1x8bOkidZeWHBk56-5XtkN9bzzUdXnBF5','COMM 2038 — Student Project 5','Visual Language')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 6</div><button class="view-btn view-btn-sm" onclick="openModal('1X0bElzlB50vO_Q9-cXS7m98hnORKp51f','COMM 2038 — Student Project 6','Visual Language')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 7</div><button class="view-btn view-btn-sm" onclick="openModal('1hEajkEl3GUXdtRDkaugp6CG_8R7B8UZY','COMM 2038 — Student Project 7','Visual Language')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 8</div><button class="view-btn view-btn-sm" onclick="openModal('1HhS3tLDTii-EjzSt2agcIcbvy56inLRm','COMM 2038 — Student Project 8','Visual Language')">View ↗</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+        
+    </div>
+
+    <!-- COMM 2310 -->
+    <div class="course-block">
+      <div class="course-header" onclick="toggleCourse('c2310')">
+        <div class="course-header-left">
+          <div class="course-code">COMM 2310 · Fall 2025</div>
+          <div class="course-name">Media Arts</div>
+        </div>
+        <button class="course-toggle" id="toggle-c2310">Show Files ↓</button>
+      </div>
+      <div class="course-files" id="c2310">
+        <div class="file-list">
+          <div class="file-item"><div class="file-info"><span class="file-icon">📄</span><span class="file-name">Syllabus — COMM 2310 Media Arts</span><span class="file-type">PDF</span></div><button class="view-btn view-btn-sm" onclick="openModal('1lCZvGRzklxS4jXeaYFWjM3CzZSHdwdms','Syllabus — COMM 2310 Media Arts','Fall 2025')">View ↗</button></div>
+                    <div class="file-item"><div class="file-info"><span class="file-icon">📊</span><span class="file-name">Media Art Lecture</span><span class="file-type">PDF</span></div><button class="view-btn view-btn-sm" onclick="openModal('120br33H5PL1-L3kTA7Gqapi8w4Pv60it','Media Art Lecture','COMM 2310')">View ↗</button></div>
+          <div class="file-item"><div class="file-info"><span class="file-icon">📝</span><span class="file-name">Sample Assignment</span><span class="file-type">PDF</span></div><button class="view-btn view-btn-sm" onclick="openModal('1PirG36guUYdkRe0iyntLdf2YHrSbIa3D','Sample Assignment — COMM 2310','Media Arts')">View ↗</button></div>
+          <div class="file-item"><div class="file-info"><span class="file-icon">📝</span><span class="file-name">Sample Assignment 2</span><span class="file-type">PDF</span></div><button class="view-btn view-btn-sm" onclick="openModal('1gEplkC7_4ZGWP49otsJAAOQoTQ5B4IAX','Sample Assignment 2 — COMM 2310','Media Arts')">View ↗</button></div>
+        </div>
+        <div class="course-block" style="margin-top:0;border-top:1px solid var(--border);border-radius:0;border-left:none;border-right:none;border-bottom:none">
+          <div class="course-header" onclick="toggleCourse('eff_c2310_fall')">
+            <div class="course-header-left">
+              <div class="course-code">Teaching Effectiveness · Fall 2025</div>
+              <div class="course-name">Student Evaluation Results</div>
+            </div>
+            <button class="course-toggle" id="toggle-eff_c2310_fall">Show Results ↓</button>
+          </div>
+          <div class="course-files" id="eff_c2310_fall">
+            <div style="padding:1.25rem 1.5rem;">
+              <div style="display:flex;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem;">
+                <div>
+                  <div style="font-size:0.75rem;font-weight:600;color:var(--ink);margin-bottom:2px;">COMM 2310-01</div>
+                  <div style="font-size:0.7rem;color:var(--mid);">Media Arts</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem;">
+                <div style="position:relative;width:120px;height:120px;flex-shrink:0;">
+                  <canvas id="eff_eff_c2310_fall" width="120" height="120"></canvas>
+</div>
+<div style="text-align:center;margin-top:6px;font-size:0.9rem;font-weight:700;color:var(--ink);">4.77<span style="font-size:0.65rem;font-weight:400;color:var(--mid);"> / 5.00</span></div>
+                <div style="display:flex;flex-direction:column;gap:5px;flex:1;">
+                  <div class="eff-leg-item"><span class="eff-leg-dot" style="background:#378ADD"></span>Enthusiasm<span class="eff-leg-val">4.9</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#7F77DD"></span>Explanations<span class="eff-leg-val">4.7</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#5DCAA5"></span>Preparedness<span class="eff-leg-val">4.8</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#EF9F27"></span>Engagement<span class="eff-leg-val">4.8</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#D85A30"></span>Office hours<span class="eff-leg-val">4.6</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#888780"></span>Feedback<span class="eff-leg-val">4.8</span></div>
+                </div>
+              </div>
+              <div style="padding:0.75rem 1rem;background:var(--offwhite);border-left:3px solid #EF9F27;margin-bottom:0.75rem;">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#633806;margin-bottom:4px;">Student Highlight</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;font-style:italic;">"Professor Ren engages with his students every class. Provides great feedback and wants you to succeed."</p>
+              </div>
+              <div style="padding:0.75rem 1rem;background:#F0F4FF;border-left:3px solid var(--blue);">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:4px;">Summary</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;">Tied at the top (4.77/5) with near-perfect scores on enthusiasm (4.9) and preparedness (4.8). Students in this course consistently praised the instructor's passion and hands-on engagement during class time.</p>
+              </div>
+              <div style="padding:0.75rem 1rem;background:#F0F4FF;border-left:3px solid var(--blue);margin-top:0.75rem;">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:4px;">Instructor Reflection</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;font-style:italic;">"Students appreciated the instructor's high enthusiasm and hands-on engagement, consistently noting that Professor Ren's passion for the subject made Media Arts feel dynamic and personally invested even in the larger section format."</p>
+              </div>
+              <div style="padding:0.75rem 1rem;background:#FFF8F0;border-left:3px solid #E8A030;margin-top:0.75rem;">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#B06010;margin-bottom:4px;">Areas for Continued Growth</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;">A small number of students suggested more opportunities for in-class peer feedback; this is a valuable insight I am incorporating by building structured critique sessions more deliberately into future iterations of the course.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+window._lazyChart('eff_eff_c2310_fall', function(){
+  var canvas=document.getElementById('eff_eff_c2310_fall');
+  if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  new Chart(ctx, {
+            type:'pie',data:{datasets:[{
+              data:[4.77,0.23000000000000043],
+              backgroundColor:['#EF9F27','rgba(128,128,128,0.12)'],
+              borderColor:['#BA7517','transparent'],
+              borderWidth:[2,0],hoverOffset:0
+            }]},options:{responsive:false,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{enabled:false}},animation:{duration:900,easing:'easeInOutQuart'}
+            }
+          });
+});
+</script>
+        <div class="course-block" style="margin-top:0;border-top:1px solid var(--border);border-radius:0;border-left:none;border-right:none;border-bottom:none">
+          <div class="course-header" onclick="toggleCourse('sw2310')">
+            <div class="course-header-left">
+              <div class="course-code">Student Project Examples</div>
+              <div class="course-name">Student Work Gallery</div>
+            </div>
+            <button class="course-toggle" id="toggle-sw2310">Show Work ↓</button>
+          </div>
+          <div class="course-files" id="sw2310">
+            <div class="student-grid">
+              <div class="student-cell"><div class="student-num">Project 1</div><button class="view-btn view-btn-sm" onclick="openModal('1oFcx-UPqGLIHmtVQWsCTzvAKmYxZEGub','COMM 2310 — Student Project 1','Media Arts')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 2</div><button class="view-btn view-btn-sm" onclick="openModal('1BrQU0-A29gct5nU-oqi9-nTXIFEgYQZA','COMM 2310 — Student Project 2','Media Arts')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 3</div><button class="view-btn view-btn-sm" onclick="openModal('1kbF0tBuo9O-jayB_vHzz7trwAIQAhFiB','COMM 2310 — Student Project 3','Media Arts')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 4</div><button class="view-btn view-btn-sm" onclick="openModal('1ocD5sb-cUzedM4T_Bhf5vO67XRNQXyu7','COMM 2310 — Student Project 4','Media Arts')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 5</div><button class="view-btn view-btn-sm" onclick="openModal('1wgTTph36gdEAG-6l7vI0BIDRr0UkduKn','COMM 2310 — Student Project 5','Media Arts')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 6</div><button class="view-btn view-btn-sm" onclick="openModal('1GNsJtQQrD8Ude23PLLLw7-di7ORT6FQ1','COMM 2310 — Student Project 6','Media Arts')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 7</div><button class="view-btn view-btn-sm" onclick="openModal('1BwM8We3lx_dpiJLOr3valLFDtvfUba6k','COMM 2310 — Student Project 7','Media Arts')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 8</div><button class="view-btn view-btn-sm" onclick="openModal('1V2J2z9LvOOd0T4KHp5faDBCmD4WbEDKQ','COMM 2310 — Student Project 8','Media Arts')">View ↗</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+        
+    </div>
+
+    <!-- COMM 3028 -->
+    <div class="course-block">
+      <div class="course-header" onclick="toggleCourse('c3028')">
+        <div class="course-header-left">
+          <div class="course-code">COMM 3028 · Fall 2025 &amp; Spring 2026</div>
+          <div class="course-name">Graphic Design from Prehistory to AI</div>
+        </div>
+        <button class="course-toggle" id="toggle-c3028">Show Files ↓</button>
+      </div>
+      <div class="course-files" id="c3028">
+        <div class="file-list">
+          <div class="file-item"><div class="file-info"><span class="file-icon">📄</span><span class="file-name">Syllabus — COMM 3028 Graphic Design from Prehistory to AI</span><span class="file-type">PDF</span></div><button class="view-btn view-btn-sm" onclick="openModal('1TYom_0zXIPZtrDLI9EJxaWils4qtytAr','Syllabus — COMM 3028','Graphic Design from Prehistory to AI')">View ↗</button></div>
+                    <div class="file-item"><div class="file-info"><span class="file-icon">📝</span><span class="file-name">Writing Assignment</span><span class="file-type">PDF</span></div><button class="view-btn view-btn-sm" onclick="openModal('1UFzLqMaT33IKEYFuRtRsE6y_-q9BsgdY','Writing Assignment — COMM 3028','Graphic Design from Prehistory to AI')">View ↗</button></div>
+          <div class="file-item"><div class="file-info"><span class="file-icon">📋</span><span class="file-name">Peer Review — Class Observation</span><span class="file-type">PDF</span></div><button class="view-btn view-btn-sm" onclick="openModal('14cdh-ljj3yD33_ILUaq8d7e5j3VEAHy6','Peer Review — COMM 3028 Class Observation','Prof. Ren')">View ↗</button></div>
+        </div>
+        <div class="course-block" style="margin-top:0;border-top:1px solid var(--border);border-radius:0;border-left:none;border-right:none;border-bottom:none">
+          <div class="course-header" onclick="toggleCourse('eff_c3028_fall')">
+            <div class="course-header-left">
+              <div class="course-code">Teaching Effectiveness · Fall 2025</div>
+              <div class="course-name">Student Evaluation Results</div>
+            </div>
+            <button class="course-toggle" id="toggle-eff_c3028_fall">Show Results ↓</button>
+          </div>
+          <div class="course-files" id="eff_c3028_fall">
+            <div style="padding:1.25rem 1.5rem;">
+              <div style="display:flex;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem;">
+                <div>
+                  <div style="font-size:0.75rem;font-weight:600;color:var(--ink);margin-bottom:2px;">COMM 3028-60</div>
+                  <div style="font-size:0.7rem;color:var(--mid);">Graphics: Prehistory to AI</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem;">
+                <div style="position:relative;width:120px;height:120px;flex-shrink:0;">
+                  <canvas id="eff_eff_c3028_fall" width="120" height="120"></canvas>
+</div>
+<div style="text-align:center;margin-top:6px;font-size:0.9rem;font-weight:700;color:var(--ink);">4.62<span style="font-size:0.65rem;font-weight:400;color:var(--mid);"> / 5.00</span></div>
+                <div style="display:flex;flex-direction:column;gap:5px;flex:1;">
+                  <div class="eff-leg-item"><span class="eff-leg-dot" style="background:#378ADD"></span>Enthusiasm<span class="eff-leg-val">4.5</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#7F77DD"></span>Explanations<span class="eff-leg-val">4.7</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#5DCAA5"></span>Preparedness<span class="eff-leg-val">4.7</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#EF9F27"></span>Engagement<span class="eff-leg-val">4.6</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#D85A30"></span>Office hours<span class="eff-leg-val">4.6</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#888780"></span>Feedback<span class="eff-leg-val">4.6</span></div>
+                </div>
+              </div>
+              <div style="padding:0.75rem 1rem;background:var(--offwhite);border-left:3px solid #7F77DD;margin-bottom:0.75rem;">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#3C3489;margin-bottom:4px;">Student Highlight</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;font-style:italic;">"I learned so much about graphic design, and this class has inspired me a lot!"</p>
+              </div>
+              <div style="padding:0.75rem 1rem;background:#F0F4FF;border-left:3px solid var(--blue);">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:4px;">Summary</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;">Scored a strong 4.62, with especially high marks for explanations (4.7) and preparedness (4.7). Students appreciated the clear syllabus, diverse content mix, and prompt feedback.</p>
+              </div>
+              <div style="padding:0.75rem 1rem;background:#F0F4FF;border-left:3px solid var(--blue);margin-top:0.75rem;">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:4px;">Instructor Reflection</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;font-style:italic;">"Students in both semesters of the SOCI section highlighted the instructor's deep content knowledge and flexible approach, with many noting that the course inspired genuine creative interest and a desire to continue studying design."</p>
+              </div>
+              <div style="padding:0.75rem 1rem;background:#FFF8F0;border-left:3px solid #E8A030;margin-top:0.75rem;">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#B06010;margin-bottom:4px;">Areas for Continued Growth</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;">A few students expressed interest in more hands-on studio time relative to lecture; I am refining the balance between conceptual content and applied practice to give students more opportunities to create alongside learning.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+window._lazyChart('eff_eff_c3028_fall', function(){
+  var canvas=document.getElementById('eff_eff_c3028_fall');
+  if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  new Chart(ctx, {
+            type:'pie',data:{datasets:[{
+              data:[4.62,0.3799999999999999],
+              backgroundColor:['#7F77DD','rgba(128,128,128,0.12)'],
+              borderColor:['#534AB7','transparent'],
+              borderWidth:[2,0],hoverOffset:0
+            }]},options:{responsive:false,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{enabled:false}},animation:{duration:900,easing:'easeInOutQuart'}
+            }
+          });
+});
+</script>
+        <div class="course-block" style="margin-top:0;border-top:1px solid var(--border);border-radius:0;border-left:none;border-right:none;border-bottom:none">
+          <div class="course-header" onclick="toggleCourse('eff_c3028_spring')">
+            <div class="course-header-left">
+              <div class="course-code">Teaching Effectiveness · Spring 2026</div>
+              <div class="course-name">Student Evaluation Results</div>
+            </div>
+            <button class="course-toggle" id="toggle-eff_c3028_spring">Show Results ↓</button>
+          </div>
+          <div class="course-files" id="eff_c3028_spring">
+            <div style="padding:1.25rem 1.5rem;">
+              <div style="display:flex;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem;">
+                <div>
+                  <div style="font-size:0.75rem;font-weight:600;color:var(--ink);margin-bottom:2px;">COMM 3028-60</div>
+                  <div style="font-size:0.7rem;color:var(--mid);">Graphics: Prehistory to AI</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem;">
+                <div style="position:relative;width:120px;height:120px;flex-shrink:0;">
+                  <canvas id="eff_eff_c3028_spring" width="120" height="120"></canvas>
+</div>
+<div style="text-align:center;margin-top:6px;font-size:0.9rem;font-weight:700;color:var(--ink);">4.77<span style="font-size:0.65rem;font-weight:400;color:var(--mid);"> / 5.00</span></div>
+                <div style="display:flex;flex-direction:column;gap:5px;flex:1;">
+                  <div class="eff-leg-item"><span class="eff-leg-dot" style="background:#378ADD"></span>Enthusiasm<span class="eff-leg-val">4.7</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#7F77DD"></span>Explanations<span class="eff-leg-val">4.8</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#5DCAA5"></span>Preparedness<span class="eff-leg-val">4.8</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#EF9F27"></span>Engagement<span class="eff-leg-val">4.8</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#D85A30"></span>Office hours<span class="eff-leg-val">4.8</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#888780"></span>Feedback<span class="eff-leg-val">4.7</span></div>
+                </div>
+              </div>
+              <div style="padding:0.75rem 1rem;background:var(--offwhite);border-left:3px solid #378ADD;margin-bottom:0.75rem;">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#0C447C;margin-bottom:4px;">Student Highlight</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;font-style:italic;">"He is awesome — super understanding and great for students who struggle with time management. I have had him for two classes now."</p>
+              </div>
+              <div style="padding:0.75rem 1rem;background:#F0F4FF;border-left:3px solid var(--blue);">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:4px;">Summary</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;">Top performer this semester at 4.77, earning near-perfect scores across all six dimensions. Students appreciated the instructor's deep knowledge, flexibility, and the variety of resources provided each week.</p>
+              </div>
+              <div style="padding:0.75rem 1rem;background:#F0F4FF;border-left:3px solid var(--blue);margin-top:0.75rem;">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:4px;">Instructor Reflection</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;font-style:italic;">"Students in both semesters of the SOCI section highlighted the instructor's deep content knowledge and flexible approach, with many noting that the course inspired genuine creative interest and a desire to continue studying design."</p>
+              </div>
+              <div style="padding:0.75rem 1rem;background:#FFF8F0;border-left:3px solid #E8A030;margin-top:0.75rem;">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#B06010;margin-bottom:4px;">Areas for Continued Growth</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;">While scores were uniformly high, some students noted they wished there were even more varied project types throughout the semester; I am developing additional experimental prompts to offer greater creative range in future offerings.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+window._lazyChart('eff_eff_c3028_spring', function(){
+  var canvas=document.getElementById('eff_eff_c3028_spring');
+  if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  new Chart(ctx, {
+            type:'pie',data:{datasets:[{
+              data:[4.77,0.23000000000000043],
+              backgroundColor:['#378ADD','rgba(128,128,128,0.12)'],
+              borderColor:['#185FA5','transparent'],
+              borderWidth:[2,0],hoverOffset:0
+            }]},options:{responsive:false,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{enabled:false}},animation:{duration:900,easing:'easeInOutQuart'}
+            }
+          });
+});
+</script>
+        <div class="course-block" style="margin-top:0;border-top:1px solid var(--border);border-radius:0;border-left:none;border-right:none;border-bottom:none">
+          <div class="course-header" onclick="toggleCourse('sw3028')">
+            <div class="course-header-left">
+              <div class="course-code">Student Project Examples</div>
+              <div class="course-name">Student Work Gallery</div>
+            </div>
+            <button class="course-toggle" id="toggle-sw3028">Show Work ↓</button>
+          </div>
+          <div class="course-files" id="sw3028">
+            <div class="student-grid">
+              <div class="student-cell"><div class="student-num">Project 1</div><button class="view-btn view-btn-sm" onclick="openModal('1R35wN05jiJ1Df-Z5uU6qp_BYyRXNEy_t','COMM 3028 — Student Project 1','Graphic Design from Prehistory to AI')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 2</div><button class="view-btn view-btn-sm" onclick="openModal('1jwWLh6hOA0qKfqvDu7IEYvUPOBesmZQH','COMM 3028 — Student Project 2','Graphic Design from Prehistory to AI')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 3</div><button class="view-btn view-btn-sm" onclick="openModal('1bInsEJ2npg3kZXcr0roqJjIokDKHgBGx','COMM 3028 — Student Project 3','Graphic Design from Prehistory to AI')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 4</div><button class="view-btn view-btn-sm" onclick="openModal('1-JmFxCo4ATlcZ9OQUeHEv6mrCDorIOTX','COMM 3028 — Student Project 4','Graphic Design from Prehistory to AI')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 5</div><button class="view-btn view-btn-sm" onclick="openModal('14YifY6Y7kMlyr8FkUBrpnFwXTsmP6_7m','COMM 3028 — Student Project 5','Graphic Design from Prehistory to AI')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 6</div><button class="view-btn view-btn-sm" onclick="openModal('1Fn0mQ8McDvUec3WIgXPgPjfM-nUGhHVL','COMM 3028 — Student Project 6','Graphic Design from Prehistory to AI')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 7</div><button class="view-btn view-btn-sm" onclick="openModal('1cG8DR29lz49m3DbC2sZPSoWAkEOfE9HL','COMM 3028 — Student Project 7','Graphic Design from Prehistory to AI')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 8</div><button class="view-btn view-btn-sm" onclick="openModal('1zo79nEu8YEqufl7idXgb4ttFc1Vaipqp','COMM 3028 — Student Project 8','Graphic Design from Prehistory to AI')">View ↗</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+        
+    </div>
+
+    <!-- COMM 3320 -->
+    <div class="course-block">
+      <div class="course-header" onclick="toggleCourse('c3320')">
+        <div class="course-header-left">
+          <div class="course-code">COMM 3320 · Spring 2026</div>
+          <div class="course-name">Video and Motion Graphics</div>
+        </div>
+        <button class="course-toggle" id="toggle-c3320">Show Files ↓</button>
+      </div>
+      <div class="course-files" id="c3320">
+        <div class="file-list">
+          <div class="file-item"><div class="file-info"><span class="file-icon">📄</span><span class="file-name">Syllabus — COMM 3320 Video and Motion Graphics</span><span class="file-type">PDF</span></div><button class="view-btn view-btn-sm" onclick="openModal('1QkSyffPrB6kRLrUP6vWIhIxteHJNWqop','Syllabus — COMM 3320','Video and Motion Graphics')">View ↗</button></div>
+          <div class="file-item"><div class="file-info"><span class="file-icon">📊</span><span class="file-name">Sample Presentation — Camera Shots</span><span class="file-type">PDF</span></div><button class="view-btn view-btn-sm" onclick="openModal('1p648kGqcjqDbCGfZzx7rXYo0_p6jDL9j','Sample Presentation — Camera Shots','COMM 3320')">View ↗</button></div>
+          <div class="file-item"><div class="file-info"><span class="file-icon">📝</span><span class="file-name">Video Advertisement Project</span><span class="file-type">PDF</span></div><button class="view-btn view-btn-sm" onclick="openModal('14Q06YgSIoR07vRy2Oeaef_aYQ3Ls2_N0','Video Advertisement Project — COMM 3320','Video and Motion Graphics')">View ↗</button></div>
+
+        </div>
+        <div class="course-block" style="margin-top:0;border-top:1px solid var(--border);border-radius:0;border-left:none;border-right:none;border-bottom:none">
+          <div class="course-header" onclick="toggleCourse('eff_c3320_spring')">
+            <div class="course-header-left">
+              <div class="course-code">Teaching Effectiveness · Spring 2026</div>
+              <div class="course-name">Student Evaluation Results</div>
+            </div>
+            <button class="course-toggle" id="toggle-eff_c3320_spring">Show Results ↓</button>
+          </div>
+          <div class="course-files" id="eff_c3320_spring">
+            <div style="padding:1.25rem 1.5rem;">
+              <div style="display:flex;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem;">
+                <div>
+                  <div style="font-size:0.75rem;font-weight:600;color:var(--ink);margin-bottom:2px;">COMM 3320-01</div>
+                  <div style="font-size:0.7rem;color:var(--mid);">Video and Motion Graphics</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem;">
+                <div style="position:relative;width:120px;height:120px;flex-shrink:0;">
+                  <canvas id="eff_eff_c3320_spring" width="120" height="120"></canvas>
+</div>
+<div style="text-align:center;margin-top:6px;font-size:0.9rem;font-weight:700;color:var(--ink);">4.50<span style="font-size:0.65rem;font-weight:400;color:var(--mid);"> / 5.00</span></div>
+                <div style="display:flex;flex-direction:column;gap:5px;flex:1;">
+                  <div class="eff-leg-item"><span class="eff-leg-dot" style="background:#378ADD"></span>Enthusiasm<span class="eff-leg-val">4.5</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#7F77DD"></span>Explanations<span class="eff-leg-val">4.5</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#5DCAA5"></span>Preparedness<span class="eff-leg-val">4.5</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#EF9F27"></span>Engagement<span class="eff-leg-val">4.5</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#D85A30"></span>Office hours<span class="eff-leg-val">4.5</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#888780"></span>Feedback<span class="eff-leg-val">4.5</span></div>
+                </div>
+              </div>
+              <div style="padding:0.75rem 1rem;background:var(--offwhite);border-left:3px solid #EF9F27;margin-bottom:0.75rem;">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#633806;margin-bottom:4px;">Student Highlight</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;font-style:italic;">"Professor Ren is always on time and prepared. His presentations are thorough and clear. He gives great feedback and is always in a great positive mood."</p>
+              </div>
+              <div style="padding:0.75rem 1rem;background:#F0F4FF;border-left:3px solid var(--blue);">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:4px;">Summary</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;">Earned a consistent 4.50 across all dimensions, reflecting a well-rounded teaching experience. Students valued the instructor's preparedness, positive energy, and hands-on engagement with the class.</p>
+              </div>
+              <div style="padding:0.75rem 1rem;background:#F0F4FF;border-left:3px solid var(--blue);margin-top:0.75rem;">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:4px;">Instructor Reflection</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;font-style:italic;">"Students valued the instructor's consistent preparedness and positive energy, noting that the clear structure and thorough presentations made Video and Motion Graphics approachable and motivating throughout the semester."</p>
+              </div>
+              <div style="padding:0.75rem 1rem;background:#FFF8F0;border-left:3px solid #E8A030;margin-top:0.75rem;">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#B06010;margin-bottom:4px;">Areas for Continued Growth</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;">The consistency of 4.5 across all dimensions reflects a stable foundation, and I see room to push engagement and enthusiasm scores higher by incorporating more real-world industry examples and guest perspectives into upcoming semesters.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+window._lazyChart('eff_eff_c3320_spring', function(){
+  var canvas=document.getElementById('eff_eff_c3320_spring');
+  if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  new Chart(ctx, {
+            type:'pie',data:{datasets:[{
+              data:[4.5,0.5],
+              backgroundColor:['#EF9F27','rgba(128,128,128,0.12)'],
+              borderColor:['#BA7517','transparent'],
+              borderWidth:[2,0],hoverOffset:0
+            }]},options:{responsive:false,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{enabled:false}},animation:{duration:900,easing:'easeInOutQuart'}
+            }
+          });
+});
+</script>
+        <div class="course-block" style="margin-top:0;border-top:1px solid var(--border);border-radius:0;border-left:none;border-right:none;border-bottom:none">
+          <div class="course-header" onclick="toggleCourse('sw3320')">
+            <div class="course-header-left">
+              <div class="course-code">Student Project Examples</div>
+              <div class="course-name">Student Work Gallery</div>
+            </div>
+            <button class="course-toggle" id="toggle-sw3320">Show Work ↓</button>
+          </div>
+          <div class="course-files" id="sw3320">
+            <div class="student-grid">
+              <div class="student-cell"><div class="student-num">Project 1</div><button class="view-btn view-btn-sm" onclick="openModal('1KoL-wGp2PSGzToTCo8bLIef6vX-53_cC','COMM 3320 — Student Project 1','Video and Motion Graphics')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 2</div><button class="view-btn view-btn-sm" onclick="openModal('1d3pJoJwULdNfLApkx3PRoBVuzimlZ5px','COMM 3320 — Student Project 2','Video and Motion Graphics')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 3</div><button class="view-btn view-btn-sm" onclick="openModal('1WxrBQsRZVtany8RrV0eSdY4klan83D3F','COMM 3320 — Student Project 3','Video and Motion Graphics')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 4</div><button class="view-btn view-btn-sm" onclick="openModal('1qLoUpfq2TlpaiN37IqwfI45WLEziJB2Q','COMM 3320 — Student Project 4','Video and Motion Graphics')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 5</div><button class="view-btn view-btn-sm" onclick="openModal('1QF36QP5Rx3zpLl1eYt-8FBPxXx1gBRQJ','COMM 3320 — Student Project 5','Video and Motion Graphics')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 6</div><button class="view-btn view-btn-sm" onclick="openModal('1MxBakX3D8ekni5yEHcZZ_8cxcXH82h60','COMM 3320 — Student Project 6','Video and Motion Graphics')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 7</div><button class="view-btn view-btn-sm" onclick="openModal('1isoYQJUTttnk1Pe4ZZcMjX4kumZwStBm','COMM 3320 — Student Project 7','Video and Motion Graphics')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 8</div><button class="view-btn view-btn-sm" onclick="openModal('1WjYdGNHWnCF2qyKEwtcGkgP80aPE9mbG','COMM 3320 — Student Project 8','Video and Motion Graphics')">View ↗</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+        
+    </div>
+
+
+    <!-- COMM 3038 -->
+    <div class="course-block">
+      <div class="course-header" onclick="toggleCourse('c3038main')">
+        <div class="course-header-left">
+          <div class="course-code">COMM 3038 · Fall 2025</div>
+          <div class="course-name">Video Game Analysis</div>
+        </div>
+        <button class="course-toggle" id="toggle-c3038main">Show Files ↓</button>
+      </div>
+      <div class="course-files" id="c3038main">
+        <div class="file-list">
+          <div class="file-item"><div class="file-info"><span class="file-icon">📄</span><span class="file-name">Syllabus — COMM 3038 Video Game Analysis</span><span class="file-type">PDF</span></div><button class="view-btn view-btn-sm" onclick="openModal('1VZUbmjch8uRFgsDBzTiEL7mEUailCFgA','Syllabus — COMM 3038 Video Game Analysis','Fall 2025')">View ↗</button></div>
+          <div class="file-item"><div class="file-info"><span class="file-icon">📝</span><span class="file-name">Sample Assignment</span><span class="file-type">PDF</span></div><button class="view-btn view-btn-sm" onclick="openModal('1YAxF2C9IyQs4dlGnnPLR6e7pFgiGKrd8','Sample Assignment — COMM 3038','Video Game Analysis')">View ↗</button></div>
+        </div>
+        <div class="course-block" style="margin-top:0;border-top:1px solid var(--border);border-radius:0;border-left:none;border-right:none;border-bottom:none">
+          <div class="course-header" onclick="toggleCourse('eff_c3038_fall')">
+            <div class="course-header-left">
+              <div class="course-code">Teaching Effectiveness · Fall 2025</div>
+              <div class="course-name">Student Evaluation Results</div>
+            </div>
+            <button class="course-toggle" id="toggle-eff_c3038_fall">Show Results ↓</button>
+          </div>
+          <div class="course-files" id="eff_c3038_fall">
+            <div style="padding:1.25rem 1.5rem;">
+              <div style="display:flex;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem;">
+                <div>
+                  <div style="font-size:0.75rem;font-weight:600;color:var(--ink);margin-bottom:2px;">COMM 3038-60</div>
+                  <div style="font-size:0.7rem;color:var(--mid);">Video Game Analysis</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem;">
+                <div style="position:relative;width:120px;height:120px;flex-shrink:0;">
+                  <canvas id="eff_eff_c3038_fall" width="120" height="120"></canvas>
+</div>
+<div style="text-align:center;margin-top:6px;font-size:0.9rem;font-weight:700;color:var(--ink);">4.35<span style="font-size:0.65rem;font-weight:400;color:var(--mid);"> / 5.00</span></div>
+                <div style="display:flex;flex-direction:column;gap:5px;flex:1;">
+                  <div class="eff-leg-item"><span class="eff-leg-dot" style="background:#378ADD"></span>Enthusiasm<span class="eff-leg-val">4.3</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#7F77DD"></span>Explanations<span class="eff-leg-val">4.3</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#5DCAA5"></span>Preparedness<span class="eff-leg-val">4.5</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#EF9F27"></span>Engagement<span class="eff-leg-val">4.2</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#D85A30"></span>Office hours<span class="eff-leg-val">4.5</span></div><div class="eff-leg-item"><span class="eff-leg-dot" style="background:#888780"></span>Feedback<span class="eff-leg-val">4.3</span></div>
+                </div>
+              </div>
+              <div style="padding:0.75rem 1rem;background:var(--offwhite);border-left:3px solid #5DCAA5;margin-bottom:0.75rem;">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#0F6E56;margin-bottom:4px;">Student Highlight</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;font-style:italic;">"This was an eye opening class into the world of video game design. The instructor provided great feedback."</p>
+              </div>
+              <div style="padding:0.75rem 1rem;background:#F0F4FF;border-left:3px solid var(--blue);">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:4px;">Summary</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;">Rated at 4.35, which is common for fully asynchronous courses — a few students noted that enthusiasm and engagement naturally feel diminished in online-only formats. Office hours availability was the lowest-rated dimension, reflecting less student uptake in online sections.</p>
+              </div>
+              <div style="padding:0.75rem 1rem;background:#F0F4FF;border-left:3px solid var(--blue);margin-top:0.75rem;">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:4px;">Instructor Reflection</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;font-style:italic;">"Students found Video Game Analysis to be an eye-opening experience, appreciating the instructor's preparedness and feedback quality, while noting that asynchronous delivery made interactive engagement less immediate than in face-to-face sections."</p>
+              </div>
+              <div style="padding:0.75rem 1rem;background:#FFF8F0;border-left:3px solid #E8A030;margin-top:0.75rem;">
+                <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#B06010;margin-bottom:4px;">Areas for Continued Growth</div>
+                <p style="font-size:0.75rem;color:var(--mid);margin:0;line-height:1.6;">The fully asynchronous format presented the most notable challenge — engagement (4.2) and enthusiasm scores reflected the inherent limitations of online delivery, and I am focused on enriching the course content itself through more dynamic multimedia materials and clearer real-world connections to keep students motivated throughout the semester.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+window._lazyChart('eff_eff_c3038_fall', function(){
+  var canvas=document.getElementById('eff_eff_c3038_fall');
+  if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  new Chart(ctx, {
+            type:'pie',data:{datasets:[{
+              data:[4.35,0.6500000000000004],
+              backgroundColor:['#5DCAA5','rgba(128,128,128,0.12)'],
+              borderColor:['#1D9E75','transparent'],
+              borderWidth:[2,0],hoverOffset:0
+            }]},options:{responsive:false,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{enabled:false}},animation:{duration:900,easing:'easeInOutQuart'}
+            }
+          });
+});
+</script>
+        <div class="course-block" style="margin-top:0;border-top:1px solid var(--border);border-radius:0;border-left:none;border-right:none;border-bottom:none">
+          <div class="course-header" onclick="toggleCourse('sw3038')">
+            <div class="course-header-left">
+              <div class="course-code">Student Project Examples</div>
+              <div class="course-name">Student Work Gallery</div>
+            </div>
+            <button class="course-toggle" id="toggle-sw3038">Show Work ↓</button>
+          </div>
+          <div class="course-files" id="sw3038">
+            <div class="student-grid">
+              <div class="student-cell"><div class="student-num">Project 1</div><button class="view-btn view-btn-sm" onclick="openModal('1j9SmwQDXtlhcOdsfnIiNeKH_I3NcOvz8','COMM 3038 — Student Project 1','Video Game Analysis')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 2</div><button class="view-btn view-btn-sm" onclick="openModal('1yzLTUmsQYummSZFzOMUQ1VO3Q3hwdK9W','COMM 3038 — Student Project 2','Video Game Analysis')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 3</div><button class="view-btn view-btn-sm" onclick="openModal('1z1R8xV4Rc4dprbYEDpNqbR-ozzaT-YkX','COMM 3038 — Student Project 3','Video Game Analysis')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 4</div><button class="view-btn view-btn-sm" onclick="openModal('1_nQHYjQVkcq9bC8ARG1B2k4Xq-RIR75X','COMM 3038 — Student Project 4','Video Game Analysis')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 5</div><button class="view-btn view-btn-sm" onclick="openModal('1gxlnQHo_nWMWmwZ45ZexfueLUHdDlc3V','COMM 3038 — Student Project 5','Video Game Analysis')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 6</div><button class="view-btn view-btn-sm" onclick="openModal('1mMhskgatlg2u5N0rX9Md6JY8ED4vdd_Y','COMM 3038 — Student Project 6','Video Game Analysis')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 7</div><button class="view-btn view-btn-sm" onclick="openModal('1c7KfC5qVvTHfi92fYTcUKHxHqn6RgL91','COMM 3038 — Student Project 7','Video Game Analysis')">View ↗</button></div>
+              <div class="student-cell"><div class="student-num">Project 8</div><button class="view-btn view-btn-sm" onclick="openModal('1_CnH2cGGqVZgRMvx_vbozuI3j_dPb4lw','COMM 3038 — Student Project 8','Video Game Analysis')">View ↗</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+        
+    </div>
+
+    <!-- Student Documentary Screening -->
+    <div class="cards-wrap" style="margin-top:1rem"><div class="cards">
+      <div class="card award-card">
+        <div class="card-eyebrow">Student Showcase</div>
+        <div class="card-title">Student Documentary Screening</div>
+        <div class="card-desc">Public screening of student documentary projects, showcasing work developed through hands-on production, research, and collaborative filmmaking throughout the semester.</div>
+        <div class="card-footer"><div class="card-tags"><span class="tag blue">Documentary</span><span class="tag">Screening</span></div><button class="view-btn" onclick="openModal('1wHENcFZTwL_xKfwADU998gyErI4sntTa','Student Documentary Screening','Student Showcase · CSUB')">View ↗</button></div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- SOCI SECTION -->
+  <div class="subsection">
+    <div class="subsection-label">SOCI Courses</div>
+
+    <div class="course-block">
+      <div class="course-header" onclick="toggleCourse('sc2038')">
+        <div class="course-header-left">
+          <div class="course-code">COMM 2038 (SOCI) · Fall 2025 &amp; Spring 2026</div>
+          <div class="course-name">Visual Language</div>
+        </div>
+        <button class="course-toggle" id="toggle-sc2038">Show Files ↓</button>
+      </div>
+      <div class="course-files" id="sc2038">
+        <div class="file-list">
+          <div class="file-item"><div class="file-info"><span class="file-icon">📄</span><span class="file-name">Schedule — COMM 2038 Visual Language (Fall 2025)</span><span class="file-type">PDF</span></div><button class="view-btn view-btn-sm" onclick="openModal('1pp4iqfgd8VhBoVdAJqC15Qne6qZnIyZ_','Schedule — COMM 2038 Visual Language','SOCI · Fall 2025')">View ↗</button></div>
+          <div class="file-item"><div class="file-info"><span class="file-icon">📄</span><span class="file-name">Schedule — COMM 2038 Visual Language (Spring 2026)</span><span class="file-type">PDF</span></div><button class="view-btn view-btn-sm" onclick="openModal('1Hzm7-A3DapG25jBHaBL-mK0hx1TyjbHH','Schedule — COMM 2038 Visual Language','SOCI · Spring 2026')">View ↗</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="course-block">
+      <div class="course-header" onclick="toggleCourse('sc2310')">
+        <div class="course-header-left">
+          <div class="course-code">COMM 2310 (SOCI) · Fall 2025</div>
+          <div class="course-name">Media Arts</div>
+        </div>
+        <button class="course-toggle" id="toggle-sc2310">Show Files ↓</button>
+      </div>
+      <div class="course-files" id="sc2310">
+        <div class="file-list">
+          <div class="file-item"><div class="file-info"><span class="file-icon">📄</span><span class="file-name">Schedule — COMM 2310 Media Arts</span><span class="file-type">PDF</span></div><button class="view-btn view-btn-sm" onclick="openModal('19vrnjwlUIEZXExmoSv94dmTu3iXTrtt3','Schedule — COMM 2310 Media Arts','SOCI · Fall 2025')">View ↗</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="course-block">
+      <div class="course-header" onclick="toggleCourse('sc3028')">
+        <div class="course-header-left">
+          <div class="course-code">COMM 3028 (SOCI) · Fall 2025 &amp; Spring 2026</div>
+          <div class="course-name">Graphics from Prehistory to AI</div>
+        </div>
+        <button class="course-toggle" id="toggle-sc3028">Show Files ↓</button>
+      </div>
+      <div class="course-files" id="sc3028">
+        <div class="file-list">
+          <div class="file-item"><div class="file-info"><span class="file-icon">📄</span><span class="file-name">Schedule — COMM 3028 Graphics from Prehistory to AI (Fall 2025)</span><span class="file-type">PDF</span></div><button class="view-btn view-btn-sm" onclick="openModal('1x6BRP3ZtYQyXFnyfvRpWpGwzt_G5rQD1','Schedule — COMM 3028 Graphics from Prehistory to AI','SOCI · Fall 2025')">View ↗</button></div>
+          <div class="file-item"><div class="file-info"><span class="file-icon">📄</span><span class="file-name">Schedule — COMM 3028 Graphics from Prehistory to AI (Spring 2026)</span><span class="file-type">PDF</span></div><button class="view-btn view-btn-sm" onclick="openModal('1KtKLkFvirRcLncMpis0YttHuNDynszvo','Schedule — COMM 3028 Graphics from Prehistory to AI','SOCI · Spring 2026')">View ↗</button></div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="course-block">
+      <div class="course-header" onclick="toggleCourse('c3038')">
+        <div class="course-header-left">
+          <div class="course-code">COMM 3038 (SOCI) · Fall 2025</div>
+          <div class="course-name">Video Game Analysis</div>
+        </div>
+        <button class="course-toggle" id="toggle-c3038">Show Files ↓</button>
+      </div>
+      <div class="course-files" id="c3038">
+        <div class="file-list">
+          <div class="file-item"><div class="file-info"><span class="file-icon">📄</span><span class="file-name">Schedule — COMM 3038 Video Game Analysis</span><span class="file-type">PDF</span></div><button class="view-btn view-btn-sm" onclick="openModal('1CTFSh5Csow-KI38spgGo9hJJlSAOUNVd','Schedule — COMM 3038 Video Game Analysis','SOCI · Fall 2025')">View ↗</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="course-block">
+      <div class="course-header" onclick="toggleCourse('sc3320')">
+        <div class="course-header-left">
+          <div class="course-code">COMM 3320 (SOCI) · Spring 2026</div>
+          <div class="course-name">Video and Motion Graphics</div>
+        </div>
+        <button class="course-toggle" id="toggle-sc3320">Show Files ↓</button>
+      </div>
+      <div class="course-files" id="sc3320">
+        <div class="file-list">
+          <div class="file-item"><div class="file-info"><span class="file-icon">📄</span><span class="file-name">Schedule — COMM 3320 Video and Motion Graphics (Spring 2026)</span><span class="file-type">PDF</span></div><button class="view-btn view-btn-sm" onclick="openModal('1BhG3BYf3Ti4m4FY8MwJ6LFHrpxyWR9aM','Schedule — COMM 3320 Video and Motion Graphics','SOCI · Spring 2026')">View ↗</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- STUDENT WORK -->
+  
+
+  <!-- EXPERIENTIAL LEARNING -->
+  <div class="subsection">
+    <div class="subsection-label">Experiential Learning & Industry Engagement</div>
+    <div class="cards-wrap"><div class="cards">
+      <div class="card">
+        <div class="card-eyebrow">Industry Visit</div>
+        <div class="card-title">FotoKem & Apture — Los Angeles</div>
+        <div class="card-desc-short">Led an immersive, behind-the-scenes industry visit for students to FotoKem and Apture in Los Angeles, exploring advanced lighting setups, production workflows, and professional film production.</div>
+        <div class="card-desc-extra" id="extra-fotokem">Students engaged directly with industry professionals, gaining valuable insight into the fast-paced world of media and entertainment. The visit provided inspiration, mentorship, and a clearer view of career pathways — helping bridge the gap between classroom learning and real-world practice, empowering students to see their creative passions in motion.</div>
+        <button class="read-more-btn" onclick="toggleExtra('extra-fotokem',this)">Read more ↓</button>
+        <div class="card-footer"><div class="card-tags"><span class="tag blue">Los Angeles</span><span class="tag">FotoKem</span><span class="tag">Apture</span></div><button class="view-btn" onclick="openModal('1EQ-Vl6BjaEgfmYeVJntkppMacgJACcFC','Industry Visit — FotoKem & Apture','Los Angeles · Student Field Trip')">View ↗</button></div>
+      </div>
+      <div class="card">
+        <div class="card-eyebrow">Field Trip</div>
+        <div class="card-title">Media Arts Class — Field Study & Filming</div>
+        <div class="card-desc">Took the Media Arts class on a field trip for hands-on location study and on-site filming, connecting classroom instruction with real-world production environments and experiential learning.</div>
+        <div class="card-footer"><div class="card-tags"><span class="tag blue">Field Trip</span><span class="tag">Media Arts</span></div><button class="view-btn" onclick="openModal('1NDdfWi2HMgwHQYSpbiBsofVGCCreoPHv','Media Arts Field Trip','Field Study & Filming')">View ↗</button></div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- PROFESSIONAL DEVELOPMENT -->
+  <div class="subsection">
+    <div class="subsection-label">Professional Development & Training</div>
+    <div class="cards-wrap"><div class="cards">
+      <div class="card">
+        <div class="card-eyebrow">Faculty Training</div>
+        <div class="card-title">AI in the CSU Faculty Series</div>
+        <div class="card-desc">Participated in the CSU Teaching and Learning Faculty Series on AI, exploring applications of artificial intelligence in higher education pedagogy and curriculum design.</div>
+        <div class="card-footer"><div class="card-tags"><span class="tag blue">CSU</span><span class="tag">AI</span><span class="tag">Pedagogy</span></div><button class="view-btn" onclick="openModal('1N_CWvayTspINzR4xLZWHCdyQeFTDCiE9','AI in the CSU Faculty Series','Teaching & Learning Training')">View ↗</button></div>
+      </div>
+      <div class="card">
+        <div class="card-eyebrow">Faculty Training</div>
+        <div class="card-title">The GAME Plan — Critical Thinking in the AI Era</div>
+        <div class="card-desc">Participated in the GAME Plan workshop on designing critical thinking assignments for the AI era, developing strategies to foster deeper student engagement.</div>
+        <div class="card-footer"><div class="card-tags"><span class="tag blue">AI Era</span><span class="tag">Critical Thinking</span></div><button class="view-btn" onclick="openModal('111aJmB0aNyQXl58eplHaqe6lGdVlHi8p','The GAME Plan — AI Era','Critical Thinking Assignments')">View ↗</button></div>
+      </div>
+      <div class="card">
+        <div class="card-eyebrow">Technical Training</div>
+        <div class="card-title">Unity Shader Graph Masterclass</div>
+        <div class="card-desc">Completed a Unity Shader Graph Masterclass, expanding expertise in real-time visual effects and 3D rendering relevant to game design and interactive media coursework.</div>
+        <div class="card-footer"><div class="card-tags"><span class="tag blue">Unity</span><span class="tag">Shader Graph</span><span class="tag">3D</span></div><button class="view-btn" onclick="openModal('1vQCNCXXEubDaME6YWUXrPVEbHVywjcqR','Unity Shader Graph Masterclass','Technical Training')">View ↗</button></div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ SCHOLARLY ACTIVITY -->
+<div class="portfolio-section" id="section-scholarly">
+  <div class="section-header">
+    <div><div class="section-title">Scholarly Activity</div></div>
+    <div class="section-count">17 documents · 2025–2026</div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-label">Awards & Grants</div>
+    <div class="cards-wrap"><div class="cards">
+      <div class="card award-card">
+        <div class="card-eyebrow">Research Award</div>
+        <div class="card-title">RSCA / RCU Initiative Award</div>
+        <div class="card-desc-short">Recipient of the FY 2025–2026 RSCA / RCU Initiative Award in support of <em>A Journey to Kern River and Beyond – Media Arts Project</em>.</div>
+        <div class="card-desc-extra" id="extra-rsca">An interdisciplinary media arts initiative exploring regional landscape, ecology, and cultural memory through experimental visual storytelling and digital media practices. Award included a $2,000 mini grant and 3 WTU release time to support research and creative production.</div>
+        <button class="read-more-btn" onclick="toggleExtra('extra-rsca',this)">Read more ↓</button>
+        <div class="card-footer"><div class="card-tags"><span class="tag">CSUB GRaSP</span><span class="tag blue">$2,000</span><span class="tag">3 WTU</span></div><button class="view-btn" onclick="openModal('1oLdKBZ7iE360IVKOUVdSJg9byrF9INge','RSCA / RCU Initiative Award','Research Award · FY 2025–2026')">View ↗</button></div>
+      </div>
+      <div class="card award-card">
+        <div class="card-eyebrow">Instructional-Related Activity</div>
+        <div class="card-title">IRA Award — FY 2025–2026</div>
+        <div class="card-desc-short">Recipient of the FY 2025–2026 IRA Award for <em>A Journey to Kern River and Beyond – Interactive Media Arts and Education Project</em>.</div>
+        <div class="card-desc-extra" id="extra-ira">The $5,000 award supported student involvement in all phases of production, including field research trips, documentary filmmaking, and immersive VR media development. The project culminated in a public presentation and exhibition at the Media Arts Center at CSUB.</div>
+        <button class="read-more-btn" onclick="toggleExtra('extra-ira',this)">Read more ↓</button>
+        <div class="card-footer"><div class="card-tags"><span class="tag">CSUB</span><span class="tag blue">$5,000</span></div><button class="view-btn" onclick="openModal('1mU5UqXRJwqmchGZ8eYTtufKKU63sEQQk','IRA Award — FY 2025–2026','Instructional-Related Activity Award')">View ↗</button></div>
+      </div>
+      <div class="card">
+        <div class="card-eyebrow">Film Festival Award</div>
+        <div class="card-title">Best Documentary — The Spirit of String</div>
+        <div class="card-desc-short">Winner of the Film Category at the Los Angeles Short Film & Script Festival.</div>
+        <div class="card-desc-extra" id="extra-doc">Contributed as graphic designer, developing visual materials and design elements supporting the film's narrative identity and promotional presentation.</div>
+        <button class="read-more-btn" onclick="toggleExtra('extra-doc',this)">Read more ↓</button>
+        <div class="card-footer"><div class="card-tags"><span class="tag blue">LA Short Film Festival</span><span class="tag">Graphic Designer</span></div><div class="multi-links"><button class="view-btn" onclick="openModal('16mPOSpZf6SLGEwUQRrsK03GDBa_B_ASd','Best Documentary Award','The Spirit of String')">Award ↗</button><button class="view-btn" onclick="openModal('1bg4FnhqxqhVN1MvGYrb9JsDyy1SxtpY1','LA Short Film Festival','Festival Program')">Festival ↗</button></div></div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-label">Film, Screenings & Distribution</div>
+    <div class="cards-wrap"><div class="cards">
+      <div class="card">
+        <div class="card-eyebrow">Documentary Screening</div>
+        <div class="card-title">Of Color and Ink — Getty Center</div>
+        <div class="card-desc-short">Part of the Getty's Art on Screen series, tracing Chang Dai-chien's global influence through a 12-year filmmaking journey.</div>
+        <div class="card-desc-extra" id="extra-getty">Across Asia, Europe, and the Americas, followed by a conversation with filmmakers and scholars. Harold M. Williams Auditorium. May 7, 2026, 6pm.</div>
+        <button class="read-more-btn" onclick="toggleExtra('extra-getty',this)">Read more ↓</button>
+        <div class="card-footer"><div class="card-tags"><span class="tag">Getty Center</span><span class="tag">Los Angeles</span></div><button class="view-btn" onclick="openModal('1sYdcc7kL44hH7H0yISwxLKcwiNnHbm9s','Getty Center Screening','Of Color and Ink · Art on Screen Series')">View ↗</button></div>
+      </div>
+      <div class="card">
+        <div class="card-eyebrow">Streaming Distribution</div>
+        <div class="card-title">Of Color and Ink — Amazon Prime Video</div>
+        <div class="card-desc-short">Feature-length documentary (1h 40min, 2025) available worldwide for rent or purchase on Amazon Prime Video.</div>
+        <div class="card-desc-extra" id="extra-amazon">Expanding public access to the film's exploration of Chang Dai-chien's artistic legacy and the global history of modern ink painting.</div>
+        <button class="read-more-btn" onclick="toggleExtra('extra-amazon',this)">Read more ↓</button>
+        <div class="card-footer"><div class="card-tags"><span class="tag">Amazon Prime</span><span class="tag blue">International</span></div><button class="view-btn" onclick="openModal('1jiyRyH-qCmLXEirG_3vXMFywQw4Mlgqe','Amazon Prime Video','Of Color and Ink · 2025')">View ↗</button></div>
+      </div>
+      <div class="card">
+        <div class="card-eyebrow">Collector's Edition</div>
+        <div class="card-title">Of Color and Ink — DVD + Book Set</div>
+        <div class="card-desc-short">Collector's edition featuring the full documentary alongside a companion publication with archival images, essays, and research materials.</div>
+        <div class="card-desc-extra" id="extra-dvd">Selected for the Getty Research Institute collection, recognizing its contribution to the study of modern Chinese art and global ink painting history.</div>
+        <button class="read-more-btn" onclick="toggleExtra('extra-dvd',this)">Read more ↓</button>
+        <div class="card-footer"><div class="card-tags"><span class="tag">Physical Media</span><span class="tag blue">Getty Research Institute</span></div><button class="view-btn" onclick="openModal('1j2-fG10IptbQ-fKjtNNrnTOwyykNVLav','Collector\'s Edition DVD + Book','Of Color and Ink')">View ↗</button></div>
+      </div>
+      <div class="card">
+        <div class="card-eyebrow">International Screening</div>
+        <div class="card-title">Kunshan Hou Beiren Art Museum</div>
+        <div class="card-desc-short">International screening at Kunshan Hou Beiren Art Museum (候北人美術館), Shanghai, China. July 7, 2025.</div>
+        <div class="card-desc-extra" id="extra-kunshan">Highlighting the film's engagement with Chinese art history and contemporary audiences through its exploration of Chang Dai-chien's global artistic legacy.</div>
+        <button class="read-more-btn" onclick="toggleExtra('extra-kunshan',this)">Read more ↓</button>
+        <div class="card-footer"><div class="card-tags"><span class="tag blue">China</span><span class="tag">Shanghai</span></div><button class="view-btn" onclick="openModal('17RR1TQfraitTz9wK3lD9FQ-Bf-tcFueg','Kunshan Hou Beiren Art Museum','Shanghai · July 7, 2025')">View ↗</button></div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-label">Exhibitions</div>
+    <div class="cards-wrap"><div class="cards">
+      <div class="card">
+        <div class="card-eyebrow">Group Exhibition</div>
+        <div class="card-title">AI-Embraced: Art, Video, Sculpture, Photography</div>
+        <div class="card-desc-short">Exhibition featuring <em>Point of Entry 1</em>, a collaborative video work combining AI-manipulated analog drawings with digital animation in After Effects.</div>
+        <div class="card-desc-extra" id="extra-ai">Explores the intersection of hand-drawn imagery, machine interpretation, and experimental moving-image practices. Presented at Red Bluff Art Gallery as part of a multidisciplinary exhibition on AI and emerging artistic technologies.</div>
+        <button class="read-more-btn" onclick="toggleExtra('extra-ai',this)">Read more ↓</button>
+        <div class="card-footer"><div class="card-tags"><span class="tag">Red Bluff Art Gallery</span><span class="tag">AI Art</span></div><button class="view-btn" onclick="openModal('1aPgT6n7DjTPUptHaS33Ka6Rc6fUn94yG','AI-Embraced Exhibition','Red Bluff Art Gallery')">View ↗</button></div>
+      </div>
+      <div class="card">
+        <div class="card-eyebrow">Group Exhibition</div>
+        <div class="card-title">Bird Call — DSU Mundt Library</div>
+        <div class="card-desc-short">Group exhibition at Dakota State University's Mundt Library featuring <em>Bird Call</em> alongside works by regional and emerging artists.</div>
+        <div class="card-desc-extra" id="extra-bird">Engaging themes of ecology, observation, and human connection to the natural world. February 10 – March 20.</div>
+        <button class="read-more-btn" onclick="toggleExtra('extra-bird',this)">Read more ↓</button>
+        <div class="card-footer"><div class="card-tags"><span class="tag">South Dakota</span><span class="tag">DSU</span></div><button class="view-btn" onclick="openModal('1Fk32PfLGki-272AVaV_g_7iGdy8q2EJP','Bird Call Exhibition','DSU Mundt Library · Feb 10 – Mar 20')">View ↗</button></div>
+      </div>
+      <div class="card">
+        <div class="card-eyebrow">Invited Two-Person Exhibition</div>
+        <div class="card-title">Mendocino College Gallery</div>
+        <div class="card-desc-short">Invited two-person exhibition with Yu Ji (CSULB) exploring migration, memory, and embodied experience through installation, video, and digital media.</div>
+        <div class="card-desc-extra" id="extra-mendocino">Featured <em>Lost in Transit</em>, an immersive video installation, alongside <em>Pulse of Fever</em>, a large-format digital print and 6 smaller pieces. Aug 15 – Oct 26, 2026.</div>
+        <button class="read-more-btn" onclick="toggleExtra('extra-mendocino',this)">Read more ↓</button>
+        <div class="card-footer"><div class="card-tags"><span class="tag">Mendocino</span><span class="tag">2026</span></div><div class="multi-links"><button class="view-btn" onclick="openModal('1U5cTASQhqdWyXVrt3aspbVN2qYVyxJWd','Mendocino — Letter','Exhibition · Aug–Oct 2026')">Letter ↗</button><button class="view-btn" onclick="openModal('1BewNPTOpaJNtgs8uEQanv4006tpQeFAy','Mendocino — Info','Gallery Details')">Info ↗</button><button class="view-btn" onclick="openModal('13p_Y3rHV37xjxZTA9FndQIRmPEAoKulR','Design Lecture','Mendocino College')">Lecture ↗</button></div></div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-label">Publications</div>
+    <div class="cards-wrap"><div class="cards">
+      <div class="card">
+        <div class="card-eyebrow">International Publication</div>
+        <div class="card-title">ONE: New Media Art 2026</div>
+        <div class="card-desc-short">Featured in <em>ONE: New Media Art 2026</em>, an international publication and exhibition catalog highlighting emerging practices in digital and new media art, published in South Korea.</div>
+        <div class="card-desc-extra" id="extra-pub">Showcases artists working across video, installation, AI, and experimental media, situating the work within a global contemporary art context.</div>
+        <button class="read-more-btn" onclick="toggleExtra('extra-pub',this)">Read more ↓</button>
+        <div class="card-meta"><strong>Publisher:</strong> CICA Press &nbsp;·&nbsp; <strong>ISBN:</strong> 979-11-88671-29-8 03600</div>
+        <div class="card-footer"><div class="card-tags"><span class="tag blue">South Korea</span><span class="tag">CICA Press</span></div><button class="view-btn" onclick="openModal('1GUd34AEpl-AhkeQjw-2XGVyXZ8DUi6Sp','ONE: New Media Art 2026','CICA Press · ISBN 979-11-88671-29-8 03600')">View ↗</button></div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-label">Conferences & Presentations</div>
+    <div class="cards-wrap"><div class="cards">
+      <div class="card">
+        <div class="card-eyebrow">International Conference</div>
+        <div class="card-title">1st International Conference on Innovative Design</div>
+        <div class="card-desc-short">Participated in the Academic Forum — <em>Innovate Life, Entrepreneur Dreams</em> and "Future by Design" International Exhibition in China.</div>
+        <div class="card-desc-extra" id="extra-conf">Contributing work and research centered on contemporary media practices, interdisciplinary design, and emerging visual technologies within an international academic and creative exchange platform.</div>
+        <button class="read-more-btn" onclick="toggleExtra('extra-conf',this)">Read more ↓</button>
+        <div class="card-footer"><div class="card-tags"><span class="tag blue">China</span><span class="tag">International</span></div><div class="multi-links"><button class="view-btn" onclick="openModal('1TRN7maaJqNh02S80ZDL8EE7SiCamlhHt','Conference Banner','1st International Conference on Innovative Design')">Banner ↗</button><button class="view-btn" onclick="openModal('1cJ3ygFmo9NDDHJaZH96DaTcDLJPmgY6-','Conference Presentation','Innovate Life, Entrepreneur Dreams')">Presentation ↗</button></div></div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-label">Lecture and Workshop</div>
+    <div class="cards-wrap"><div class="cards">
+      <div class="card">
+        <div class="card-eyebrow">International Invitation — Guest Speaker</div>
+        <div class="card-title">Brno University of Technology, Czech Republic</div>
+        <div class="card-desc-short">Invited by Assoc. Prof. Ing. Zdenka Konečná to present research, deliver lectures, and lead workshops at Brno University of Technology.</div>
+        <div class="card-desc-extra" id="extra-brno">Focused on contemporary approaches to social media design, digital branding, and marketing strategies. March 30 – April 5, 2026.</div>
+        <button class="read-more-btn" onclick="toggleExtra('extra-brno',this)">Read more ↓</button>
+        <div class="card-footer"><div class="card-tags"><span class="tag blue">Czech Republic</span><span class="tag">Mar–Apr 2026</span></div><button class="view-btn" onclick="openModal('1iXvsdB6qV3O24_9Zoj7zm2eO1iVTiddF','Brno University — Invitation Letter','Guest Speaker · Mar 30 – Apr 5, 2026')">View ↗</button></div>
+      </div>
+      <div class="card">
+        <div class="card-eyebrow">Exhibition + Workshop Invitation</div>
+        <div class="card-title">Mendocino College Gallery Exhibition</div>
+        <div class="card-desc">Invited by Gallery Director Jazzminh Moore to exhibit and lead a workshop for 2D Design/Color & Composition class, August–October 2026.</div>
+        <div class="card-footer"><div class="card-tags"><span class="tag">Mendocino College</span><span class="tag">2026</span></div><button class="view-btn" onclick="openModal('1U5cTASQhqdWyXVrt3aspbVN2qYVyxJWd','Mendocino College — Invitation Letter','Exhibition + Workshop · Aug–Oct 2026')">View ↗</button></div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ SERVICE -->
+<div class="portfolio-section" id="section-service">
+  <div class="section-header">
+    <div><div class="section-title">Service</div></div>
+    <div class="section-count">8 documents · 2025–2026</div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-label">Service to University</div>
+    <div class="cards-wrap"><div class="cards">
+      <div class="card">
+        <div class="card-eyebrow">University Committee</div>
+        <div class="card-title">Academic Affairs Committee (AAC)</div>
+        <div class="card-desc">Member of the CSUB Academic Affairs Committee (AAC) for 2025–2026, contributing to university-level academic policy review and shared governance.</div>
+        <div class="card-footer"><div class="card-tags"><span class="tag">CSUB</span><span class="tag blue">University</span></div><button class="view-btn" onclick="openModal('14Rivchn38-DQ81xzpefUC1KOTHWHuBSG','Academic Affairs Committee (AAC)','Welcome Letter · 2025–2026')">View ↗</button></div>
+      </div>
+      <div class="card">
+        <div class="card-eyebrow">University Committee</div>
+        <div class="card-title">Information Technology Committee (ITC)</div>
+        <div class="card-desc">Member of the CSUB Information Technology Committee, advising on university-wide technology infrastructure, digital resources, and instructional technology initiatives.</div>
+        <div class="card-footer"><div class="card-tags"><span class="tag">CSUB</span><span class="tag blue">University</span></div></div>
+      </div>
+      <div class="card">
+        <div class="card-eyebrow">Student Engagement</div>
+        <div class="card-title">CSU Adobe MAX — Student Participation</div>
+        <div class="card-desc">Accompanied and supported CSUB students in attending CSU Adobe MAX, providing professional development and exposure to industry-leading creative technology.</div>
+        <div class="card-footer"><div class="card-tags"><span class="tag">CSUB</span><span class="tag blue">University</span><span class="tag">Adobe MAX</span></div><button class="view-btn" onclick="openModal('16GNx2HmWzdU5-fN1kWutmiwXudreHbIt','CSU Adobe MAX','Student Participation · CSUB')">View ↗</button></div>
+      </div>
+      <div class="card">
+        <div class="card-eyebrow">University Initiative</div>
+        <div class="card-title">Campus Belonging Consortium Meeting</div>
+        <div class="card-desc">Participated in CSUB's Campus Belonging Consortium, contributing to university-wide efforts to foster inclusive, equitable, and welcoming campus environments.</div>
+        <div class="card-footer"><div class="card-tags"><span class="tag">CSUB</span><span class="tag blue">University</span><span class="tag">DEI</span></div><button class="view-btn" onclick="openModal('1ZoydafRvQCUZcBuCDyRTMOEqODmSunGz','Campus Belonging Consortium','University Initiative')">View ↗</button></div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-label">Service to College</div>
+    <div class="cards-wrap"><div class="cards">
+      <div class="card">
+        <div class="card-eyebrow">College Committee</div>
+        <div class="card-title">A&H Curriculum Committee</div>
+        <div class="card-desc">Member of the College of Arts and Humanities Curriculum Committee, reviewing and advising on undergraduate and graduate curriculum proposals across the college.</div>
+        <div class="card-footer"><div class="card-tags"><span class="tag">A&H</span><span class="tag blue">College</span></div><button class="view-btn" onclick="openModal('1RY4uDyVFC10_xJLR8MAoNhAJFxwXbVNA','A&H Curriculum Committee','College of Arts & Humanities')">View ↗</button></div>
+      </div>
+      <div class="card">
+        <div class="card-eyebrow">College Outreach</div>
+        <div class="card-title">Learning Beyond the Classroom — Getty Center</div>
+        <div class="card-desc">Organized and participated in a Learning Beyond the Classroom initiative at the Getty Center, facilitating experiential learning opportunities connecting students with leading cultural institutions.</div>
+        <div class="card-footer"><div class="card-tags"><span class="tag">A&H</span><span class="tag blue">College</span><span class="tag">Getty Center</span></div><button class="view-btn" onclick="openModal('1DmZm3qmN8_zjKnskfZrPGGYnx-bPMzMR','Learning Beyond the Classroom — Getty Center','College Outreach Initiative')">View ↗</button></div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-label">Service to Department</div>
+    <div class="cards-wrap"><div class="cards">
+      <div class="card">
+        <div class="card-eyebrow">Committee Chair</div>
+        <div class="card-title">Department Web Committee — Chair</div>
+        <div class="card-desc">Chair of the CSUB Department of Communication Web Committee, overseeing development, maintenance, and strategic direction of the department's online presence.</div>
+        <div class="card-footer"><div class="card-tags"><span class="tag">Department</span><span class="tag blue">Chair</span></div></div>
+      </div>
+      <div class="card">
+        <div class="card-eyebrow">Committee Chair</div>
+        <div class="card-title">Scholarship Committee — Chair</div>
+        <div class="card-desc">Chair of the CSUB Department of Communication Scholarship Committee for 2026–2027, leading the selection and award process for student scholarships.</div>
+        <div class="card-footer"><div class="card-tags"><span class="tag">Department</span><span class="tag blue">Chair</span></div><button class="view-btn" onclick="openModal('1Kix_emfiNRZOs3zDrT1dxFCSfeD4gh5y','Communications Scholarship Committee','Chair · 2026–2027')">View ↗</button></div>
+      </div>
+      <div class="card">
+        <div class="card-eyebrow">Hire Committee</div>
+        <div class="card-title">Department Hire Committee</div>
+        <div class="card-desc">Served on the Department of Communication Hire Committee for the Game Design and 3D Animation faculty position, contributing to candidate evaluation and faculty recruitment.</div>
+        <div class="card-footer"><div class="card-tags"><span class="tag">Department</span><span class="tag">Game Design</span><span class="tag">3D Animation</span></div></div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-label">Service to Community</div>
+    <div class="cards-wrap"><div class="cards">
+      <div class="card">
+        <div class="card-eyebrow">Community Guest Talk</div>
+        <div class="card-title">Guest Speaker — Blue Zones Project</div>
+        <div class="card-desc">Delivered a guest talk for the Blue Zones Project, engaging community audiences on design, creativity, and well-being as part of the organization's community enrichment programming.</div>
+        <div class="card-footer"><div class="card-tags"><span class="tag blue">Community</span><span class="tag">Blue Zones</span></div><div class="multi-links"><button class="view-btn" onclick="openModal('1ZpXib2IXGIK_7xuewYXykpvy952kuVNR','Guest Talk — Blue Zones','Community Service')">Photo 1 ↗</button><button class="view-btn" onclick="openModal('11Vn0UjvpMiUtnDc15jY1dTMdTLTOodBN','Guest Talk — Blue Zones','Community Service')">Photo 2 ↗</button></div></div>
+      </div>
+      <div class="card">
+        <div class="card-eyebrow">Service to Department</div>
+        <div class="card-title">Guest Speaker — Visual Language</div>
+        <div class="card-desc">Invited a faculty colleague from California State University, Long Beach to share their expertise in developing visual language, fostering cross-campus dialogue and bringing a broader academic perspective to our departmental programming.</div>
+        <div class="card-footer"><div class="card-tags"><span class="tag">Guest Speaker</span><span class="tag">Visual Language</span></div><button class="view-btn" onclick="openModal('1GzNfdSa7ODXH0rkOlGO0QwzUbHM6O1K-','Guest Speaker — Visual Language','Service to Department')">View ↗</button></div>
+      </div>
+    </div></div>
+
+    <div class="cards-wrap" style="margin-top:1rem"><div class="cards">
+      <div class="card">
+        <div class="card-eyebrow">Co-Chair · Staff & Faculty Network</div>
+        <div class="card-title">Asian Faculty and Staff Network (AFSN) — Co-Chair</div>
+        <div class="card-desc">Served as Co-Chair of the Asian Faculty and Staff Network (AFSN) at CSUB, focusing efforts on supporting the Asian, Pacific Islander, and Desi American (APIDA) community on campus through advocacy, programming, and fostering a more inclusive and equitable university environment.</div>
+        <div class="card-footer"><div class="card-tags"><span class="tag blue">APIDA</span><span class="tag">Community</span><span class="tag">Co-Chair</span></div></div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-label">Service to Discipline & Professional Field</div>
+    <div class="cards-wrap"><div class="cards">
+      <div class="card award-card">
+        <div class="card-eyebrow">Professional Organization — Rotating Vice Chair</div>
+        <div class="card-title">ACAAA — Association of Chinese Artists in American Academia</div>
+        <div class="card-desc-short">Served as Rotating-term Vice Chair of ACAAA, dedicated to fostering cross-cultural exchange, scholarly dialogue, and artistic collaboration between Chinese and American academic communities.</div>
+        <div class="card-desc-extra" id="extra-acaaa">Work focused on facilitating conversations around pedagogical practices, cultural identity, and transnational artistic practices. Helped organize symposia, panel discussions, and collaborative projects connecting academic communities and encouraging cross-cultural understanding in both the theory and practice of art.</div>
+        <button class="read-more-btn" onclick="toggleExtra('extra-acaaa',this)">Read more ↓</button>
+        <div class="card-footer"><div class="card-tags"><span class="tag blue">International</span><span class="tag">Cross-Cultural</span><span class="tag">Professional</span></div></div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<script>
+function switchSection(name){
+  document.querySelectorAll('.portfolio-section').forEach(function(s){s.classList.remove('visible')});
+  document.querySelectorAll('.section-tab').forEach(function(t){t.classList.remove('active')});
+  document.querySelectorAll('.nav-link').forEach(function(l){l.classList.remove('active')});
+  document.getElementById('section-'+name).classList.add('visible');
+  document.getElementById('tab-'+name).classList.add('active');
+  document.getElementById('navlink-'+name).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function gotoEvaluations(e){
+  e.preventDefault();
+  switchSection('teaching');
+  setTimeout(function(){
+    var el=document.getElementById('eff_c2038_fall');
+    if(el){openEffBlock(el);}
+  },400);
+}
+function openEffBlock(canvas){
+  var parent=canvas.closest('.course-block');
+  if(!parent)return;
+  var filesDiv=parent.querySelector('.course-files');
+  var toggle=parent.querySelector('.course-toggle');
+  if(filesDiv&&!filesDiv.classList.contains('open')){
+    filesDiv.classList.add('open');
+    if(toggle)toggle.textContent='Hide Results \u2191';
+  }
+  // Also open parent course block if this is nested
+  var grandParent=parent.parentElement&&parent.parentElement.closest('.course-block');
+  if(grandParent){
+    var gpFiles=grandParent.querySelector('.course-files');
+    var gpToggle=grandParent.querySelector('.course-toggle');
+    if(gpFiles&&!gpFiles.classList.contains('open')){
+      gpFiles.classList.add('open');
+      if(gpToggle)gpToggle.textContent='Hide Files \u2191';
+    }
+  }
+  setTimeout(function(){parent.scrollIntoView({behavior:'smooth',block:'start'});},100);
+}
+function gotoEff(e, effId){
+  e.preventDefault();
+  switchSection('teaching');
+  setTimeout(function(){
+    var canvas=document.getElementById(effId);
+    if(canvas){openEffBlock(canvas);}
+  },400);
+}
+function toggleCourse(id){
+  var files = document.getElementById(id);
+  var toggle = document.getElementById('toggle-' + id);
+  if(!files || !toggle) return;
+  var isOpen = files.classList.contains('open');
+  var isNested = id.indexOf('eff_') === 0 || id.indexOf('sw') === 0;
+
+  // Lock: record the clicked block's distance from top of page
+  var clickedBlock = files.closest('.course-block') || files;
+  var blockTop = clickedBlock.getBoundingClientRect().top + window.pageYOffset;
+
+  if(isNested){
+    var parentFiles = files.parentElement;
+    while(parentFiles && !parentFiles.classList.contains('course-files')){
+      parentFiles = parentFiles.parentElement;
+    }
+    if(parentFiles){
+      parentFiles.querySelectorAll(':scope > .course-block > .course-files.open').forEach(function(el){
+        if(el !== files){
+          el.classList.remove('open');
+          var sibId = el.getAttribute('id');
+          var sibToggle = document.getElementById('toggle-' + sibId);
+          if(sibToggle){
+            if(sibId.indexOf('sw') === 0) sibToggle.textContent = 'Show Work ↓';
+            else sibToggle.textContent = 'Show Results ↓';
+          }
+        }
+      });
+    }
+  } else {
+    var subsection = files.parentElement;
+    while(subsection && !subsection.classList.contains('subsection') && !subsection.id.startsWith('section-')){
+      subsection = subsection.parentElement;
+    }
+    if(subsection){
+      subsection.querySelectorAll(':scope > .course-block > .course-files.open').forEach(function(el){
+        if(el !== files){
+          el.classList.remove('open');
+          var sibId = el.getAttribute('id');
+          var sibToggle = document.getElementById('toggle-' + sibId);
+          if(sibToggle) sibToggle.textContent = 'Show Files ↓';
+        }
+      });
+    }
+  }
+
+  // Open new block
+  var nowOpen = !isOpen;
+  files.classList.toggle('open', nowOpen);
+  if(id.indexOf('sw') === 0){ toggle.textContent = nowOpen ? 'Hide Work ↑' : 'Show Work ↓'; }
+  else if(id.indexOf('eff_') === 0){ toggle.textContent = nowOpen ? 'Hide Results ↑' : 'Show Results ↓'; }
+  else{ toggle.textContent = nowOpen ? 'Hide Files ↑' : 'Show Files ↓'; }
+
+  // Instantly jump scroll so clicked block stays exactly where it was
+  var newBlockTop = clickedBlock.getBoundingClientRect().top + window.pageYOffset;
+  if(newBlockTop !== blockTop){
+    window.scrollTo({top: window.pageYOffset + (newBlockTop - blockTop), behavior: "instant"});
+  }
+}
+function toggleExtra(id,btn){
+  var el=document.getElementById(id);
+  var open=el.classList.toggle('open');
+  btn.textContent=open?'Read less \u2191':'Read more \u2193';
+}
+function openModal(fileId,title,sub){
+  var embedUrl='https://drive.google.com/file/d/'+fileId+'/preview';
+  var driveUrl='https://drive.google.com/file/d/'+fileId+'/view?usp=drive_link';
+  document.getElementById('modal-spinner').style.display='block';
+  document.getElementById('modal-iframe').src=embedUrl;
+  document.getElementById('modal-title').textContent=title;
+  document.getElementById('modal-sub').textContent=sub;
+  document.getElementById('modal-extlink').href=driveUrl;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('modal').classList.remove('open');
+  document.getElementById('modal-iframe').src='';
+  document.body.style.overflow='';
+}
+function handleOverlayClick(e){if(e.target===document.getElementById('modal'))closeModal();}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+</script>
+
+<!-- ═══════════════════════════════════════════════════ PERSONAL STATEMENT -->
+<div class="portfolio-section visible" id="section-statement">
+  <div class="section-header">
+    <div><div class="section-title">Personal Statement</div></div>
+    <div class="section-count">August 2026</div>
+  </div>
+
+  <div style="max-width:820px;margin:0 auto;padding:3rem 2.5rem;font-family:'DM Sans',sans-serif;line-height:1.8;color:var(--ink);font-size:0.92rem;">
+
+    <div style="margin-bottom:2.5rem;">
+      <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid);margin-bottom:0.4rem;">August 2026</div>
+      <div style="font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--ink);margin-bottom:0.2rem;">(Joe) Zhe Ren</div>
+      <div style="font-size:0.85rem;color:var(--mid);">Assistant Professor · Department of Communications · California State University, Bakersfield</div>
+    </div>
+
+    <p style="margin-bottom:1.25rem;">This statement accompanies my Working Personnel Action File in support of my application for tenure at California State University, Bakersfield (CSUB). I joined CSUB in August 2023 with 2 years credits toward tenure, and this review represents my formal case for tenure consideration. Over the past three years, I have worked to develop my teaching, scholarly activity, and service in ways that reflect my commitment to this institution and to the field of digital media and design.</p>
+    <p style="margin-bottom:1.25rem;">In teaching, I have developed and delivered a growing curriculum spanning seven course sections in AY 2025–2026 alone, including two newly designed courses — COMM 2038 (Visual Language) and COMM 3028 (Graphic Design from Prehistory to AI) — that have received strong student evaluations since their introduction. In scholarly activity, I have maintained an active research and creative practice across three years, participating in 12 film screenings, contributing as graphic designer to films that received 4 international festival awards, presenting at 3 international conferences, exhibiting work in 8 solo and group exhibitions, delivering 5 invited lectures and workshops, publishing in 3 publications, and receiving 5 grants in support of my research and creative work. In service, I have contributed actively at the departmental, college, university, community, and professional levels.</p>
+    <p style="margin-bottom:1.25rem;">This statement provides a brief overview of my work across all three years at CSUB, with a focus on this year's accomplishments, and reflects my ongoing commitment to teaching excellence, original scholarship, and meaningful service to CSUB and the broader academic community.</p>
+
+    <!-- TEACHING -->
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:0.05em;color:var(--ink);margin:2.5rem 0 1rem;padding-bottom:0.5rem;border-bottom:2px solid var(--border);text-transform:uppercase;line-height:1.1;">Teaching</div>
+
+    <div class="ps-sub-head">Teaching Philosophy</div>
+    <p style="margin-bottom:1.25rem;">Creativity is one of the essential qualities of any artistic process. My teaching philosophy centers on helping students understand and develop the relationship between visual imagery and storytelling in the creative process. To inspire creativity requires an intricate interplay of deep sensibility, acute observation, unexpected imagination, unique expressiveness, and balanced control of the overall concept. I use visual juxtaposition and montage exercises to stimulate students' engagement with the creative process.</p>
+    <p style="margin-bottom:1.25rem;">A thoughtful integration of aesthetics, functionality, and technology forms the foundation of effective media art and design education. From introductory courses to advanced studies in digital media, I help students understand that whether it be traditional illustration, digital design, or emerging technologies — these are only tools for creative expression. Media art is founded on a visual language that helps define both our culture and notions of audience for media work, preparing students for their future careers. In my classes, students are encouraged to move beyond technique by using their technical skills to support conceptual understanding. A key focus in the early stages of instruction is "learning to see" — cultivating visual awareness, developing critical observation, and exploring how form and meaning are interconnected.</p>
+    <p style="margin-bottom:1.25rem;">I believe that media art and design are deeply connected to other academic disciplines. Students should be encouraged to be adaptable, capable of acquiring new skills, and open to interdisciplinary approaches. Collaborative learning between educators and students fosters a sense of community and allows us to explore the intersections of contemporary design, digital media, science, culture, and the broader social environment.</p>
+
+        <div class="ps-sub-head">Courses Taught</div>
+    <p style="margin-bottom:1rem;">Table 1 lists all courses I have taught since joining CSUB in Fall 2023.</p>
+
+    <!-- TABLE 1 -->
+    <div style="margin:1.25rem 0 1.5rem;overflow-x:auto;">
+      <div style="font-size:0.72rem;font-weight:600;color:var(--ink);margin-bottom:0.75rem;font-style:italic;">Table 1. Teaching Load — Fall 2023 through Spring 2026</div>
+      <table style="width:100%;border-collapse:collapse;font-size:0.78rem;border:1px solid var(--border);">
+        <thead>
+          <tr style="background:var(--ink);color:var(--white);">
+            <th style="padding:8px 12px;text-align:left;font-weight:600;letter-spacing:0.04em;white-space:nowrap;">Term</th>
+            <th style="padding:8px 12px;text-align:left;font-weight:600;letter-spacing:0.04em;white-space:nowrap;">Course &amp; Section</th>
+            <th style="padding:8px 12px;text-align:left;font-weight:600;letter-spacing:0.04em;">Title</th>
+            <th style="padding:8px 12px;text-align:left;font-weight:600;letter-spacing:0.04em;white-space:nowrap;">Format</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#F8F9FF;"><td style="padding:7px 12px;color:var(--mid);white-space:nowrap;border-bottom:1px solid var(--border);">Fall 2023</td><td style="padding:7px 12px;font-weight:500;border-bottom:1px solid var(--border);white-space:nowrap;">COMM 2310-01</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);">Media Arts</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);white-space:nowrap;">In-Person</td></tr>
+          <tr><td style="padding:7px 12px;color:var(--mid);white-space:nowrap;border-bottom:1px solid var(--border);">Fall 2023</td><td style="padding:7px 12px;font-weight:500;border-bottom:1px solid var(--border);white-space:nowrap;">COMM 3170-01</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);">Design for Print &amp; Online Media</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);white-space:nowrap;">In-Person</td></tr>
+          <tr style="background:#F8F9FF;"><td style="padding:7px 12px;color:var(--mid);white-space:nowrap;border-bottom:1px solid var(--border);">Fall 2023</td><td style="padding:7px 12px;font-weight:500;border-bottom:1px solid var(--border);white-space:nowrap;">COMM 3350-01</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);">3D Animation</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);white-space:nowrap;">In-Person</td></tr>
+          <tr><td style="padding:7px 12px;color:var(--mid);white-space:nowrap;border-bottom:1px solid var(--border);">Spring 2024</td><td style="padding:7px 12px;font-weight:500;border-bottom:1px solid var(--border);white-space:nowrap;">COMM 2310-01</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);">Media Arts</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);white-space:nowrap;">In-Person</td></tr>
+          <tr style="background:#F8F9FF;"><td style="padding:7px 12px;color:var(--mid);white-space:nowrap;border-bottom:1px solid var(--border);">Spring 2024</td><td style="padding:7px 12px;font-weight:500;border-bottom:1px solid var(--border);white-space:nowrap;">COMM 3170-01</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);">Design for Print &amp; Online Media</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);white-space:nowrap;">In-Person</td></tr>
+          <tr><td style="padding:7px 12px;color:var(--mid);white-space:nowrap;border-bottom:1px solid var(--border);">Spring 2024</td><td style="padding:7px 12px;font-weight:500;border-bottom:1px solid var(--border);white-space:nowrap;">COMM 3320-01</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);">Digital Video Production</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);white-space:nowrap;">In-Person</td></tr>
+          <tr style="background:#F8F9FF;"><td style="padding:7px 12px;color:var(--mid);white-space:nowrap;border-bottom:1px solid var(--border);">Fall 2024</td><td style="padding:7px 12px;font-weight:500;border-bottom:1px solid var(--border);white-space:nowrap;">COMM 2310-01</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);">Media Arts</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);white-space:nowrap;">In-Person</td></tr>
+          <tr><td style="padding:7px 12px;color:var(--mid);white-space:nowrap;border-bottom:1px solid var(--border);">Fall 2024</td><td style="padding:7px 12px;font-weight:500;border-bottom:1px solid var(--border);white-space:nowrap;">COMM 3038-60</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);">Video Game Analysis</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);white-space:nowrap;">Online</td></tr>
+          <tr style="background:#F8F9FF;"><td style="padding:7px 12px;color:var(--mid);white-space:nowrap;border-bottom:1px solid var(--border);">Fall 2024</td><td style="padding:7px 12px;font-weight:500;border-bottom:1px solid var(--border);white-space:nowrap;">COMM 3038-61</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);">Video Game Analysis</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);white-space:nowrap;">Online</td></tr>
+          <tr><td style="padding:7px 12px;color:var(--mid);white-space:nowrap;border-bottom:1px solid var(--border);">Spring 2025</td><td style="padding:7px 12px;font-weight:500;border-bottom:1px solid var(--border);white-space:nowrap;">COMM 2310-01</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);">Media Arts</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);white-space:nowrap;">In-Person</td></tr>
+          <tr style="background:#F8F9FF;"><td style="padding:7px 12px;color:var(--mid);white-space:nowrap;border-bottom:1px solid var(--border);">Spring 2025</td><td style="padding:7px 12px;font-weight:500;border-bottom:1px solid var(--border);white-space:nowrap;">COMM 3320-01</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);">Digital Video Production</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);white-space:nowrap;">In-Person</td></tr>
+          <tr><td style="padding:7px 12px;color:var(--mid);white-space:nowrap;border-bottom:1px solid var(--border);">Spring 2025</td><td style="padding:7px 12px;font-weight:500;border-bottom:1px solid var(--border);white-space:nowrap;">COMM 3038-60</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);">Video Game Analysis</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);white-space:nowrap;">Online</td></tr>
+          <tr style="background:#F8F9FF;"><td style="padding:7px 12px;color:var(--mid);white-space:nowrap;border-bottom:1px solid var(--border);">Fall 2025</td><td style="padding:7px 12px;font-weight:500;border-bottom:1px solid var(--border);white-space:nowrap;">COMM 2038-01</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);">Visual Language</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);white-space:nowrap;">In-Person</td></tr>
+          <tr><td style="padding:7px 12px;color:var(--mid);white-space:nowrap;border-bottom:1px solid var(--border);">Fall 2025</td><td style="padding:7px 12px;font-weight:500;border-bottom:1px solid var(--border);white-space:nowrap;">COMM 2310-01</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);">Media Arts</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);white-space:nowrap;">In-Person</td></tr>
+          <tr style="background:#F8F9FF;"><td style="padding:7px 12px;color:var(--mid);white-space:nowrap;border-bottom:1px solid var(--border);">Fall 2025</td><td style="padding:7px 12px;font-weight:500;border-bottom:1px solid var(--border);white-space:nowrap;">COMM 3028-60</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);">Graphic Design from Prehistory to AI</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);white-space:nowrap;">Online</td></tr>
+          <tr><td style="padding:7px 12px;color:var(--mid);white-space:nowrap;border-bottom:1px solid var(--border);">Fall 2025</td><td style="padding:7px 12px;font-weight:500;border-bottom:1px solid var(--border);white-space:nowrap;">COMM 3038-60</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);">Video Game Analysis</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);white-space:nowrap;">Online</td></tr>
+          <tr style="background:#F8F9FF;"><td style="padding:7px 12px;color:var(--mid);white-space:nowrap;border-bottom:1px solid var(--border);">Spring 2026</td><td style="padding:7px 12px;font-weight:500;border-bottom:1px solid var(--border);white-space:nowrap;">COMM 2038-60</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);">Visual Language</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);white-space:nowrap;">Online</td></tr>
+          <tr><td style="padding:7px 12px;color:var(--mid);white-space:nowrap;border-bottom:1px solid var(--border);">Spring 2026</td><td style="padding:7px 12px;font-weight:500;border-bottom:1px solid var(--border);white-space:nowrap;">COMM 3028-60</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);">Graphic Design from Prehistory to AI</td><td style="padding:7px 12px;color:var(--mid);border-bottom:1px solid var(--border);white-space:nowrap;">Online</td></tr>
+          <tr style="background:#F8F9FF;"><td style="padding:7px 12px;color:var(--mid);white-space:nowrap;">Spring 2026</td><td style="padding:7px 12px;font-weight:500;white-space:nowrap;">COMM 3320-01</td><td style="padding:7px 12px;color:var(--mid);">Video and Motion Graphics</td><td style="padding:7px 12px;color:var(--mid);white-space:nowrap;">In-Person</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-bottom:1rem;">Over three years, my teaching portfolio has grown steadily in both breadth and range, expanding across in-person and online delivery formats and incorporating newly designed courses each year.</p>
+    <p style="margin-bottom:1rem;">I began in Fall 2023 with foundational courses in Media Arts (COMM 2310), Design for Print &amp; Online Media (COMM 3170), and 3D Animation (COMM 3350). COMM 3170 continued into Spring 2024 alongside Media Arts and the addition of Digital Video Production (COMM 3320), further developing my engagement with production-centered coursework. In Fall 2024, I took on two concurrent online sections of Video Game Analysis (COMM 3038) while continuing to teach Media Arts in person. Drawing on my prior teaching experience, I structured these asynchronous sections with clear feedback cadences, consistent pacing, and accessible support — an approach that continued to evolve and strengthen across subsequent online sections. Video Game Analysis continued into Spring 2025 alongside the return of Digital Video Production.</p>
+    <p style="margin-bottom:1rem;">In AY 2025–2026, I also designed and developed two new courses: COMM 2038 (Visual Language) and COMM 3028 (Graphic Design from Prehistory to AI). Visual Language provides a foundation-level entry point for students developing visual literacy, and Graphic Design from Prehistory to AI offers a historically and conceptually grounded study of design in the context of emerging technologies. Student evaluations for both courses were encouraging: COMM 2038 scored 4.77 out of 5.00 in Fall 2025, and COMM 3028 received 4.62 in Fall 2025 and 4.77 in Spring 2026.</p>
+    <p style="margin-bottom:1rem;">I joined CSUB with 2 years credits toward tenure. During my first two years, I carried a one-course release as part of my new faculty appointment, and in Spring 2026 I received an additional one-course release through the RSCA/RCU Initiative Award for my research project <em>A Journey to Kern River and Beyond – Media Arts Project</em>. This protected time supported both my research and course development during the early years of my appointment.</p>
+    <p style="margin-bottom:1.25rem;">This trajectory reflects a growing teaching load alongside continued investment in course development and curriculum innovation.</p>
+
+    <p style="margin-bottom:1rem;margin-top:1rem;">Across all three years, my approach to teaching has remained grounded in a consistent set of principles while continuing to evolve. I draw on design history, professional practice, and my membership in the Association of Chinese Artists in American Academia to shape projects that connect students to the broader context of their field. In every course, I emphasize learning through doing — through demonstrations, self-critique, small-group feedback, and individualized support — while encouraging students to move beyond technique toward conceptual thinking. What has developed over time is a clearer sense of how to calibrate these approaches across different course formats: the balance between demonstration and critique looks different in an in-person studio than in a fully asynchronous online section, and I continue to refine that calibration each semester based on what students tell me is working.</p>
+
+    <div class="ps-sub-head">Peer Evaluations</div>
+    <p style="margin-bottom:1.25rem;">I invited a senior colleague to conduct a formal peer observation of my COMM 3028 class this year. The observation documented a well-organized, engaging classroom environment with clear learning objectives and meaningful student participation. I value peer evaluation as an opportunity for ongoing reflection and improvement, and I plan to continue this practice in future semesters.</p>
+    <p style="margin-bottom:1.25rem;">A classroom observation of COMM 3038 Video Game Analysis (Fall 2024) noted a perceived lack of assessments. The course includes three types of assessment — weekly reflection posts and discussion board participation, activity assignment, and a final analytical project and presentation — organized within the weekly modules throughout the semester. Following this observation, I restructured the weekly modules to make the assessment expectations more clearly visible at each stage of the course, and added a quiz component to further strengthen the assessment structure and provide students with more frequent and varied opportunities to demonstrate their learning.</p>
+
+    <div class="ps-sub-head">Student Evaluations</div>
+    <p style="margin-bottom:1rem;">Student evaluations across Fall 2025 and Spring 2026 reflect strong and consistent teaching effectiveness across all courses and delivery formats.</p>
+
+    <div style="margin:1.25rem 0 1.5rem;padding:1.25rem;background:var(--offwhite);border-radius:12px;border:1px solid var(--border);">
+      <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--blue);margin-bottom:1.25rem;">Student Evaluation Results · 1–5 Scale</div>
+      
+      <div style="margin-bottom:0.5rem;">
+        <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);margin-bottom:0.75rem;">Fall 2025</div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.75rem;">
+          
+        <div style="display:flex;align-items:flex-start;gap:0.85rem;padding:0.85rem;border:1px solid var(--border);border-radius:10px;background:var(--white);flex:1;min-width:220px;max-width:340px;">
+          <svg width="64" height="64" viewBox="0 0 64 64" style="flex-shrink:0;">
+  <circle cx="32.0" cy="32.0" r="27.0" fill="none" stroke="rgba(0,0,0,0.08)" stroke-width="5"/>
+  <circle cx="32.0" cy="32.0" r="27.0" fill="none" stroke="#378ADD" stroke-width="5"
+    stroke-dasharray="161.8 7.8" stroke-dashoffset="42.4"
+    stroke-linecap="round"/>
+  <text x="32.0" y="33.0" text-anchor="middle" dominant-baseline="middle"
+    font-size="11" font-weight="600" font-family="DM Sans,sans-serif" fill="#0A0A0A">4.77</text>
+</svg>
+          <div style="flex:1;min-width:0;">
+            <div style="font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#378ADD;margin-bottom:2px;">COMM 2038-01</div>
+            <div style="font-size:0.78rem;font-weight:600;color:var(--ink);margin-bottom:4px;">Visual Language</div>
+            <div style="font-size:0.72rem;color:var(--mid);line-height:1.5;">Top score of the semester — near-perfect enthusiasm (4.9) and preparedness (4.9).</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:0.85rem;padding:0.85rem;border:1px solid var(--border);border-radius:10px;background:var(--white);flex:1;min-width:220px;max-width:340px;">
+          <svg width="64" height="64" viewBox="0 0 64 64" style="flex-shrink:0;">
+  <circle cx="32.0" cy="32.0" r="27.0" fill="none" stroke="rgba(0,0,0,0.08)" stroke-width="5"/>
+  <circle cx="32.0" cy="32.0" r="27.0" fill="none" stroke="#EF9F27" stroke-width="5"
+    stroke-dasharray="161.8 7.8" stroke-dashoffset="42.4"
+    stroke-linecap="round"/>
+  <text x="32.0" y="33.0" text-anchor="middle" dominant-baseline="middle"
+    font-size="11" font-weight="600" font-family="DM Sans,sans-serif" fill="#0A0A0A">4.77</text>
+</svg>
+          <div style="flex:1;min-width:0;">
+            <div style="font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#EF9F27;margin-bottom:2px;">COMM 2310-01</div>
+            <div style="font-size:0.78rem;font-weight:600;color:var(--ink);margin-bottom:4px;">Media Arts</div>
+            <div style="font-size:0.72rem;color:var(--mid);line-height:1.5;">Tied for top — students praised consistent engagement and hands-on support every class.</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:0.85rem;padding:0.85rem;border:1px solid var(--border);border-radius:10px;background:var(--white);flex:1;min-width:220px;max-width:340px;">
+          <svg width="64" height="64" viewBox="0 0 64 64" style="flex-shrink:0;">
+  <circle cx="32.0" cy="32.0" r="27.0" fill="none" stroke="rgba(0,0,0,0.08)" stroke-width="5"/>
+  <circle cx="32.0" cy="32.0" r="27.0" fill="none" stroke="#7F77DD" stroke-width="5"
+    stroke-dasharray="156.8 12.9" stroke-dashoffset="42.4"
+    stroke-linecap="round"/>
+  <text x="32.0" y="33.0" text-anchor="middle" dominant-baseline="middle"
+    font-size="11" font-weight="600" font-family="DM Sans,sans-serif" fill="#0A0A0A">4.62</text>
+</svg>
+          <div style="flex:1;min-width:0;">
+            <div style="font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#7F77DD;margin-bottom:2px;">COMM 3028-60</div>
+            <div style="font-size:0.78rem;font-weight:600;color:var(--ink);margin-bottom:4px;">Graphic Design: Prehistory to AI</div>
+            <div style="font-size:0.72rem;color:var(--mid);line-height:1.5;">Strong marks for explanations (4.7) and preparedness (4.7); students valued the diverse content.</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:0.85rem;padding:0.85rem;border:1px solid var(--border);border-radius:10px;background:var(--white);flex:1;min-width:220px;max-width:340px;">
+          <svg width="64" height="64" viewBox="0 0 64 64" style="flex-shrink:0;">
+  <circle cx="32.0" cy="32.0" r="27.0" fill="none" stroke="rgba(0,0,0,0.08)" stroke-width="5"/>
+  <circle cx="32.0" cy="32.0" r="27.0" fill="none" stroke="#5DCAA5" stroke-width="5"
+    stroke-dasharray="147.6 22.1" stroke-dashoffset="42.4"
+    stroke-linecap="round"/>
+  <text x="32.0" y="33.0" text-anchor="middle" dominant-baseline="middle"
+    font-size="11" font-weight="600" font-family="DM Sans,sans-serif" fill="#0A0A0A">4.35</text>
+</svg>
+          <div style="flex:1;min-width:0;">
+            <div style="font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#5DCAA5;margin-bottom:2px;">COMM 3038-60</div>
+            <div style="font-size:0.78rem;font-weight:600;color:var(--ink);margin-bottom:4px;">Video Game Analysis</div>
+            <div style="font-size:0.72rem;color:var(--mid);line-height:1.5;">Solid for a fully asynchronous section — students praised organization and quality of feedback.</div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div style="height:1px;background:var(--border);margin:1rem 0;"></div>
+      
+      <div style="margin-bottom:0.5rem;">
+        <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);margin-bottom:0.75rem;">Spring 2026</div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.75rem;">
+          
+        <div style="display:flex;align-items:flex-start;gap:0.85rem;padding:0.85rem;border:1px solid var(--border);border-radius:10px;background:var(--white);flex:1;min-width:220px;max-width:340px;">
+          <svg width="64" height="64" viewBox="0 0 64 64" style="flex-shrink:0;">
+  <circle cx="32.0" cy="32.0" r="27.0" fill="none" stroke="rgba(0,0,0,0.08)" stroke-width="5"/>
+  <circle cx="32.0" cy="32.0" r="27.0" fill="none" stroke="#378ADD" stroke-width="5"
+    stroke-dasharray="161.8 7.8" stroke-dashoffset="42.4"
+    stroke-linecap="round"/>
+  <text x="32.0" y="33.0" text-anchor="middle" dominant-baseline="middle"
+    font-size="11" font-weight="600" font-family="DM Sans,sans-serif" fill="#0A0A0A">4.77</text>
+</svg>
+          <div style="flex:1;min-width:0;">
+            <div style="font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#378ADD;margin-bottom:2px;">COMM 3028-60</div>
+            <div style="font-size:0.78rem;font-weight:600;color:var(--ink);margin-bottom:4px;">Graphic Design: Prehistory to AI</div>
+            <div style="font-size:0.72rem;color:var(--mid);line-height:1.5;">Top performer — near-perfect across all six dimensions; students appreciated depth and flexibility.</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:0.85rem;padding:0.85rem;border:1px solid var(--border);border-radius:10px;background:var(--white);flex:1;min-width:220px;max-width:340px;">
+          <svg width="64" height="64" viewBox="0 0 64 64" style="flex-shrink:0;">
+  <circle cx="32.0" cy="32.0" r="27.0" fill="none" stroke="rgba(0,0,0,0.08)" stroke-width="5"/>
+  <circle cx="32.0" cy="32.0" r="27.0" fill="none" stroke="#5DCAA5" stroke-width="5"
+    stroke-dasharray="152.7 17.0" stroke-dashoffset="42.4"
+    stroke-linecap="round"/>
+  <text x="32.0" y="33.0" text-anchor="middle" dominant-baseline="middle"
+    font-size="11" font-weight="600" font-family="DM Sans,sans-serif" fill="#0A0A0A">4.50</text>
+</svg>
+          <div style="flex:1;min-width:0;">
+            <div style="font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#5DCAA5;margin-bottom:2px;">COMM 2038-60</div>
+            <div style="font-size:0.78rem;font-weight:600;color:var(--ink);margin-bottom:4px;">Visual Language (online)</div>
+            <div style="font-size:0.72rem;color:var(--mid);line-height:1.5;">Well-organized online section — students highlighted clear instructions and fast, helpful feedback.</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:0.85rem;padding:0.85rem;border:1px solid var(--border);border-radius:10px;background:var(--white);flex:1;min-width:220px;max-width:340px;">
+          <svg width="64" height="64" viewBox="0 0 64 64" style="flex-shrink:0;">
+  <circle cx="32.0" cy="32.0" r="27.0" fill="none" stroke="rgba(0,0,0,0.08)" stroke-width="5"/>
+  <circle cx="32.0" cy="32.0" r="27.0" fill="none" stroke="#EF9F27" stroke-width="5"
+    stroke-dasharray="152.7 17.0" stroke-dashoffset="42.4"
+    stroke-linecap="round"/>
+  <text x="32.0" y="33.0" text-anchor="middle" dominant-baseline="middle"
+    font-size="11" font-weight="600" font-family="DM Sans,sans-serif" fill="#0A0A0A">4.50</text>
+</svg>
+          <div style="flex:1;min-width:0;">
+            <div style="font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#EF9F27;margin-bottom:2px;">COMM 3320-01</div>
+            <div style="font-size:0.78rem;font-weight:600;color:var(--ink);margin-bottom:4px;">Video and Motion Graphics</div>
+            <div style="font-size:0.72rem;color:var(--mid);line-height:1.5;">Consistent 4.5 across all dimensions — students valued preparedness and positive energy.</div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <p style="margin-bottom:1rem;">In Fall 2025, COMM 2038 (Visual Language) and COMM 2310 (Media Arts) both achieved an average rating of 4.77 out of 5.00, tied for the highest scores of the semester. COMM 3028 (Graphic Design from Prehistory to AI) earned a strong 4.62, with especially high marks for explanations and preparedness. COMM 3038 (Video Game Analysis), delivered fully online, earned a 4.35 — a solid result for an asynchronous format, with students praising the organization and quality of feedback.</p>
+    <p style="margin-bottom:1rem;">In Spring 2026, COMM 3028 emerged as the top performer at 4.77, with near-perfect scores across all six dimensions. COMM 2038 (online section) and COMM 3320 (Video and Motion Graphics) both earned consistent 4.50 ratings, with students consistently noting the instructor's preparedness, clarity, and positive energy.</p>
+    <p style="margin-bottom:0.5rem;">Selected student comments across courses:</p>
+    <ul class="ps-list ps-quotes">
+      <li>"The instructor was super passionate. He never hesitated to help a student when they were lost."</li>
+      <li>"Professor Ren engages with his students every class. Provides great feedback and wants you to succeed."</li>
+      <li>"He is awesome — super understanding and great for students who struggle with time management. I have had him for two classes now."</li>
+      <li>"I learned so much about graphic design, and this class has inspired me a lot."</li>
+      <li>"Professor Ren is always on time and prepared. His presentations are thorough and clear."</li>
+    </ul>
+
+    <div style="margin:1.25rem 0;padding:1.25rem;background:var(--offwhite);border-radius:10px;border:1px solid var(--border);">
+      <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem;">Jump to Student Evaluation Results</div>
+      <div style="display:flex;flex-direction:column;gap:0.6rem;">
+        <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:0.25rem;">Fall 2025</div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
+          <a href="#" onclick="gotoEff(event,'eff_c2038_fall')" class="ps-link" style="font-size:0.75rem;padding:5px 12px;border:1.5px solid var(--blue);border-radius:100px;text-decoration:none;">COMM 2038 · Visual Language ↗</a>
+          <a href="#" onclick="gotoEff(event,'eff_c2310_fall')" class="ps-link" style="font-size:0.75rem;padding:5px 12px;border:1.5px solid var(--blue);border-radius:100px;text-decoration:none;">COMM 2310 · Media Arts ↗</a>
+          <a href="#" onclick="gotoEff(event,'eff_c3028_fall')" class="ps-link" style="font-size:0.75rem;padding:5px 12px;border:1.5px solid var(--blue);border-radius:100px;text-decoration:none;">COMM 3028 · Graphic Design ↗</a>
+          <a href="#" onclick="gotoEff(event,'eff_c3038_fall')" class="ps-link" style="font-size:0.75rem;padding:5px 12px;border:1.5px solid var(--blue);border-radius:100px;text-decoration:none;">COMM 3038 · Video Game Analysis ↗</a>
+        </div>
+        <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:0.25rem;">Spring 2026</div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+          <a href="#" onclick="gotoEff(event,'eff_c2038_spring')" class="ps-link" style="font-size:0.75rem;padding:5px 12px;border:1.5px solid var(--blue);border-radius:100px;text-decoration:none;">COMM 2038 · Visual Language ↗</a>
+          <a href="#" onclick="gotoEff(event,'eff_c3028_spring')" class="ps-link" style="font-size:0.75rem;padding:5px 12px;border:1.5px solid var(--blue);border-radius:100px;text-decoration:none;">COMM 3028 · Graphic Design ↗</a>
+          <a href="#" onclick="gotoEff(event,'eff_c3320_spring')" class="ps-link" style="font-size:0.75rem;padding:5px 12px;border:1.5px solid var(--blue);border-radius:100px;text-decoration:none;">COMM 3320 · Video & Motion ↗</a>
+        </div>
+      </div>
+    </div>
+    <p style="margin-bottom:1.25rem;margin-top:1rem;">Feedback across semesters pointed to areas I am actively working to develop, including stronger rubric clarity, more varied project types, and richer content delivery in fully asynchronous sections. I am addressing these by refining assignment scaffolding, expanding multimedia content, and incorporating more real-world industry examples across all course formats.</p>
+
+    <div class="ps-sub-head">Experiential Learning &amp; Industry Engagement</div>
+    <p style="margin-bottom:1.25rem;">This year I organized and led an industry visit for students to FotoKem and Apture in Los Angeles, providing an immersive, behind-the-scenes experience in professional film production. Students explored advanced lighting setups and production workflows and engaged directly with industry professionals. I also took the Media Arts class on a field trip for on-site filming and location study, connecting classroom learning to real-world production environments. In addition, I facilitated a Learning Beyond the Classroom trip to the Getty Center, where the documentary film I contributed to as graphic designer — <em>Of Color and Ink</em> — was screened as part of the Art on Screen series.</p>
+
+    <div class="ps-sub-head">Student Involvement in Faculty Research</div>
+    <p style="margin-bottom:1.25rem;">Through the IRA-funded <em>A Journey to Kern River and Beyond</em> project, students participated in all phases of production, including field research trips, documentary filmmaking, and immersive VR media development. The project culminated in a public presentation and exhibition at the Media Arts Center at CSUB, providing students with meaningful professional experience connected to ongoing faculty scholarship.</p>
+
+    <div class="ps-sub-head">Faculty Teaching and Learning</div>
+    <p style="margin-bottom:0.75rem;">I remain committed to my own ongoing pedagogical development. This year I participated in:</p>
+    <ul class="ps-list">
+      <li>AI in the CSU Faculty Series (CSU Office of the Chancellor)</li>
+      <li>The GAME Plan: Designing Critical Thinking Assignments for the AI Era</li>
+      <li>Unity Shader Graph Masterclass (Unity Education)</li>
+    </ul>
+
+    <!-- SCHOLARLY ACTIVITY -->
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:0.05em;color:var(--ink);margin:2.5rem 0 1rem;padding-bottom:0.5rem;border-bottom:2px solid var(--border);text-transform:uppercase;line-height:1.1;">Scholarly Activity</div>
+    <p style="margin-bottom:1.25rem;">Research and creative activity remain essential seeds that inspire and reinforce my teaching. This year has been among the most active of my career, with international exhibitions, major film screenings, a worldwide streaming distribution, a published catalog, conference presentations, international lectures, a film festival award, and two grant awards.</p>
+
+    <div class="ps-sub-head">Film Festival Award</div>
+    <p style="margin-bottom:1.25rem;">As graphic designer for <em>The Spirit of String</em>, I contributed to the film's visual identity and promotional materials. The film won the Film Category at the Los Angeles Short Film &amp; Script Festival, recognizing its creative achievement among a competitive international field of documentary submissions.</p>
+
+    <div class="ps-sub-head">Film, Screenings &amp; Distribution</div>
+    <p style="margin-bottom:1.25rem;">As graphic designer for the documentary <em>Of Color and Ink</em>, I continued to contribute to the film's growing international presence. This year the film was screened at the Getty Center as part of the Art on Screen series (May 2026), followed by a conversation with filmmakers and scholars. The film is now available worldwide on Amazon Prime Video, and a collector's edition DVD and companion book set has been selected for the Getty Research Institute collection — a significant recognition of the film's contribution to the study of modern Chinese art and global ink painting history. An additional international screening was held at the Kunshan Hou Beiren Art Museum (候北人美術館) in Shanghai, China (July 2025).</p>
+
+    <div class="ps-sub-head">Exhibitions</div>
+    <p style="margin-bottom:1.25rem;">My work was featured in three exhibitions this year. <em>AI-Embraced: Art, Video, Sculpture, Photography</em> at Red Bluff Art Gallery presented <em>Point of Entry 1</em>, a collaborative video work with Joey Tigert combining AI-manipulated analog drawings with digital animation in After Effects. <em>Bird Call</em> was exhibited at Dakota State University's Mundt Library alongside works by regional and emerging artists exploring ecology and human connection to the natural world. I was also invited to a two-person exhibition with artist Yu Ji (CSULB) at Mendocino College Gallery (August–October 2026), presenting <em>Lost in Transit</em>, an immersive video installation, alongside <em>Pulse of Fever</em> and six additional works.</p>
+
+    <div class="ps-sub-head">Publications</div>
+    <p style="margin-bottom:1.25rem;">My work was featured in <em>ONE: New Media Art 2026</em>, an international exhibition catalog published by CICA Press in South Korea (ISBN: 979-11-88671-29-8 03600), situating my practice within a global contemporary art context alongside artists working across video, installation, AI, and experimental media.</p>
+
+    <div class="ps-sub-head">Conferences &amp; Presentations</div>
+    <p style="margin-bottom:1.25rem;">I participated in the 1st International Conference on Innovative Design in China, presenting work and research centered on contemporary media practices, interdisciplinary design, and emerging visual technologies as part of the <em>Innovate Life, Entrepreneur Dreams</em> Academic Forum and the "Future by Design" International Exhibition.</p>
+
+    <div class="ps-sub-head">Lectures &amp; Workshops</div>
+    <p style="margin-bottom:1.25rem;">I was invited by Assoc. Prof. Ing. Zdenka Konečná to present research, deliver lectures, and lead workshops at Brno University of Technology in the Czech Republic (March 30–April 5, 2026), with a focus on contemporary approaches to social media design, digital branding, and marketing strategies. I was also invited by Gallery Director Jazzminh Moore to exhibit and lead a workshop for the 2D Design and Color &amp; Composition class at Mendocino College (August–October 2026).</p>
+
+    <div class="ps-sub-head">Grant Awards</div>
+    <ul class="ps-list">
+      <li><strong>RSCA / RCU Initiative Award, FY 2025–2026</strong> — <em>A Journey to Kern River and Beyond – Media Arts Project</em> ($2,000 mini grant + 3 WTU release time). This interdisciplinary project explores regional landscape, ecology, and cultural memory through experimental visual storytelling and digital media.</li>
+      <li><strong>IRA Award, FY 2025–2026</strong> — <em>A Journey to Kern River and Beyond – Interactive Media Arts and Education Project</em> ($5,000), in collaboration with Dr. Kyung Han. The award supported student involvement in all phases of production including field research, documentary filmmaking, and VR media development, culminating in a public presentation and exhibition at the Media Arts Center at CSUB.</li>
+    </ul>
+
+    <!-- SERVICE -->
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:0.05em;color:var(--ink);margin:2.5rem 0 1rem;padding-bottom:0.5rem;border-bottom:2px solid var(--border);text-transform:uppercase;line-height:1.1;">Future Research Plans</div>
+    <p style="margin-bottom:1.25rem;">I am currently co-investigating a LIFT (Learning Innovation for Future-Forward Teaching) grant proposal with Professor Weimin Zhang at San Francisco State University, titled <em>AI-Integrated Cinematic Storytelling: Multi-Campus Collaborative Production and Future-Forward Creative Workflows</em>. The project establishes a cross-campus collaborative production pipeline between CSUB and SFSU in which students from both institutions work together as interdisciplinary teams through a six-phase AI-mediated workflow, earning a digital badge in AI-Integrated Media Production aligned with the CSU Systemwide Digital Microcredentials Pilot. This collaboration represents a natural extension of my ongoing research into AI and creative practice, and directly connects my scholarly work to student learning outcomes in a meaningful and scalable way.</p>
+
+
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:0.05em;color:var(--ink);margin:2.5rem 0 1rem;padding-bottom:0.5rem;border-bottom:2px solid var(--border);text-transform:uppercase;line-height:1.1;">Service</div>
+    <p style="margin-bottom:1.25rem;">Service continues to be an important dimension of my work at CSUB, and I have engaged actively at the university, college, departmental, community, and professional levels.</p>
+    <p style="margin-bottom:1rem;">At the <strong>university level</strong>, I served on the Academic Affairs Committee (AAC) and the Information Technology Committee (ITC), and supported student engagement by accompanying students to CSU Adobe MAX and participating in the Campus Belonging Consortium.</p>
+    <p style="margin-bottom:1rem;">At the <strong>college level</strong>, I served on the College of Arts and Humanities Curriculum Committee and organized a Learning Beyond the Classroom initiative at the Getty Center, facilitating meaningful cultural and professional exposure for students.</p>
+    <p style="margin-bottom:1rem;">At the <strong>departmental level</strong>, I chaired the Department of Communication Web Committee, chaired the Scholarship Committee for the 2026–2027 academic year, served on the Hire Committee for the Game Design and 3D Animation faculty position, and invited a faculty colleague from California State University, Long Beach to deliver a guest talk on visual language, fostering cross-campus dialogue and broadening the academic perspectives available to our students and department.</p>
+    <p style="margin-bottom:1rem;">In the <strong>community</strong>, I delivered a guest talk for the Blue Zones Project, engaging local audiences on design, creativity, and well-being. I also served as Co-Chair of the Asian Faculty and Staff Network (AFSN), focusing our efforts on supporting the Asian, Pacific Islander, and Desi American (APIDA) community on campus through advocacy and inclusive programming.</p>
+    <p style="margin-bottom:1.25rem;">Within my <strong>professional field</strong>, I served as Rotating-term Vice Chair of the Association of Chinese Artists in American Academia (ACAAA), helping to organize symposia, panel discussions, and collaborative projects that foster cross-cultural exchange between Chinese and American academic communities.</p>
+
+    <!-- FINAL -->
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:0.05em;color:var(--ink);margin:2.5rem 0 1rem;padding-bottom:0.5rem;border-bottom:2px solid var(--border);text-transform:uppercase;line-height:1.1;">Final Thoughts</div>
+    <p style="margin-bottom:1.25rem;">Now in my fourth year at CSUB, I remain deeply committed to the intertwined work of teaching, scholarship, and service. The past year has been a period of significant growth — from expanding my courses and building new experiential learning opportunities for students, to reaching new international audiences through exhibitions, screenings, and collaborative research projects.</p>
+    <p style="margin-bottom:1.25rem;">I am grateful for the continued support of my colleagues, students, and the university. The energy and curiosity my students bring to every class continues to be my greatest source of motivation. I look forward to building on this momentum in the year ahead — deepening my research, strengthening my courses, and continuing to contribute meaningfully to CSUB and to the field.</p>
+    <p>Thank you for your time and consideration. I am happy to answer any questions or provide further information as needed.</p>
+
+  </div>
+</div>
+
+
+<script>
+// Make entire file-item rows clickable
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.file-item').forEach(function(item) {
+    var btn = item.querySelector('.view-btn');
+    if (btn) {
+      var onclick = btn.getAttribute('onclick');
+      if (onclick) {
+        item.style.cursor = 'pointer';
+        item.addEventListener('click', function(e) {
+          if (e.target !== btn && !btn.contains(e.target)) {
+            btn.click();
+          }
+        });
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>
